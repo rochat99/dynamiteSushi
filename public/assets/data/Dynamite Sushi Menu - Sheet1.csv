@@ -1,0 +1,277 @@
+category,subcategory,id,name,ingredients,option1,price1,option2,price2,tags,notes,isOnSale,salePrice,isChefsChoice
+Sales & Specials,Sales,null,null,null,null,null,null,null,null,null,null,null,null
+Sales & Specials,Bento Boxes,ss_bb-sushBent,Sushi Bento,"9pc sushi, spicy salmon roll, gyoza, yubu, green salad, miso soup",lunch,$17.00,dinner,$19,spicy,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-makiBent,Maki Bento,"original dynamite, spicy salmon, gyoza, yubu, green salad, miso soup",lunch,$17.00,dinner,$19,spicy,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-salmSushSashBent,Salmon Sushi Sashimi Bento,"salmon sashimi, salmon sushi, spicy salmon, gyoza seaweed salad",lunch,$17.00,dinner,$19,spicy,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-vegaBent,Vegan Bento,"avocado cucumber roll, yam avocado roll, yubu, gyoza, seaweed salad",lunch,$16,dinner,$18,vegan,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-tempBent,Tempura Bento,"shrimp tempura, vegetable tempura, gyoza, rice, green salad, miso soup",lunch,$17,dinner,$19,null,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-bulgBent,Bulgogi Bento,"bulgogi, california roll, gyoza, green salad, miso soup",lunch,$18,dinner,$20,null,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-salmSushSet,Salmon Sushi Set,"9pc salmon sushi, green salad, miso soup",lunch,$14,dinner,$16,null,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-salmAndTunaSet,Salmon and Tuna Sushi Set,"6pc salmon sushi, 4pc tuna sushi, green salad, miso soup",lunch,$15,dinner,$17,null,null,FALSE,$0,FALSE
+Sales & Specials,Bento Boxes,ss_bb-chicKatsDonb,Chicken Katsu Donburi,"2pc chicken katsu, rice, green salad, miso soup",lunch,$16,dinner,$18,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-avoc,Avocado Salad,null,null,$5.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-waka,Wakame Salad,null,null,$5.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-mang,Mango Salad,null,null,$7.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-kani,Kani Salad,null,null,$6.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-suno,Sunomono Salad,"cucumber, octopus, shrimp, seaweed, crab",null,$9.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-pokeSash,Poke Sashimi Salad,null,null,$11.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Salad,st_sa-kimc,Kimchi Salad,null,null,$4.50,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-miso,Miso Soup,null,null,$1.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-tako,Takoyaki,"green onion, ginger, tempura bits, octopus",null,$7.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-vegeRoll,Vegetable Spring Roll,null,5pc,$4.50,8pc,$5.90,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-edam,Edamame,null,null,$3.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-beefGyo,Beef Gyoza,null,6pc,$5.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-vegeGyo,Vegetable Gyoza,null,6pc,$5.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-agedTofu,Agedashi Tofu,null,4pc,$5.90,7pc,$7.90,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-steaEbiShum,Steamed Ebi Shumai,null,6pc,$7.50,8pc,$8.90,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-frieEbiShum6,Deep Fried Ebi Shumai,null,6pc,$7.50,8pc,$8.90,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-shriTemp,Shrimp Tempura,null,4pc,$7.90,6pc,$11.90,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-frieYam4,Deep Fried Yam,null,4pc,$5.90,7pc,$9.90,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-vegeTemp,Vegetable Tempura,mixed vegetable tempura,10pc,$12.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-mixeTemp,Mixed Tempura,"3pc shrimp, 3pc yam, 3pc vegetables",9pc,$12.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-orig,Original Yubu,"sushi rice, inari",2pc,$4.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-avoc,Avocado Yubu,"sushi rice, avocado",2pc,$6.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-crab,Crab Yubu,"sushi rice, crab, mayo",2pc,$6.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-seaw,Seaweed Yubu,"sushi rice, inari, seaweed salad",2pc,$6.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-salm,Salmon Yubu,"sushi rice, inari, salmon",2pc,$7.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-tuna,Tuna Yubu,"sushi rice, inari, yubu, tuna",2pc,$8.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-spicSalm,Spicy Salmon Yubu,"sushi rice, yubu, salmon, spicy sauce",2pc,$7.90,null,null,spicy,null,FALSE,$0,FALSE
+Starters,Yubu (Inari),st_yu-spicTuna,Spicy Tuna Yubu,"sushi rice, yubu, tuna, spicy sauce",2pc,$8.90,null,null,spicy,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_shriTempUdon,Shrimp Tempura Udon,"3pc shrimp tempura, Japanese style udon, green salad, miso soup",3pc,$17.90,null,null,null,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_chicKats,Chicken Katsu,"chicken katsu, rice, green salad",2pc,$17.90,null,null,null,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_frieChic,Deep Fried Chicken,"chicken, green salad, rice",13-15pc,$22.90,null,null,null,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_spicChic,Spicy Chicken,chicken,Small,$12.90,Large,$18.90,spicy,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_koreSpicChic,Korean Style Spicy Chicken,"chicken, green salad, rice, soup",null,$15.90,null,null,spicy,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_koreSpicPork,Korean Style Spicy Pork,"pork, green salad, rice, soup",null,$15.90,null,null,spicy,null,FALSE,$0,FALSE
+Kitchen Entrees,Hot Food,ke_hf_salmTeri,Salmon Teriyaki,"salmon, green salad, rice, soup",null,$17.90,null,null,null,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-salm,Salmon Pizza,"salmon, avocado, tobiko",null,$11.90,null,null,null,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-spicSalm,Spicy Salmon Pizza,"salmon, avocado, tobiko, spicy sauce",null,$11.90,null,null,spicy,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-rain,Rainbow Pizza,"assorted fish, avocado, tobiko",null,$12.90,null,null,spicy,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-unag,Unagi Pizza,"bbq eel, avocado, unagi sauce, tobiko",null,$12.90,null,null,spicy,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-vega,Vegan Pizza,"avocado, cucumber, carrot, yubu",null,$9.90,null,null,vegan,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-spicScal,Spicy Scallop Pizza,"scallop, avocado, spicy sauce",null,$13.90,null,null,spicy,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Pizza,sf_sp-spicCrab,Spicy Crab Pizza,"crab meat, avocado, tobiko, spicy sauce",null,$10.90,null,null,spicy,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Burrito,sf_sb-spicSalm,Spicy Salmon Burrito,"salmon, avocado, cucumber, yubu, tempura, spicy sauce",null,$11.90,null,null,spicy,null,FALSE,$0,FALSE
+Sushi Fusion,Sushi Burrito,sf_sb-spicTuna,Spicy Tuna Burrito,"tuna, avocado, cucumber, yubu, tempura, spicy sauce",null,$12.90,null,null,spicy,null,FALSE,$0,FALSE
+Rice Bowls,Poke,rb_po-salm,Salmon,"salmon with poke sauce, sushi rice, assorted vegetables",null,$14.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Poke,rb_po-tuna,Tuna,"tuna with poke sauce, sushi rice, assorted vegetables",null,$15.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Poke,rb_po-vega,Vegan,"deep fried tofu, sushi rice, assorted vegetables",null,$13.90,null,null,vegan,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-kais,Kaiseki,"seasoned sushi rice, 12pc assorted sashimi (chefs choice), ikura sashimi, green salad, miso soup",null,$25.90,null,null,null,null,FALSE,$0,TRUE
+Rice Bowls,Donburi,rb_do-salm,Salmon,"seasoned sushi rice, salmon sashimi 12pc, ikura sashimi, green salad, miso soup",null,$21.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-tunaSalm,Tuna and Salmon,"seasoned sushi rice, salmon sashimi 6pc, tuna sashimi 6pc, ikura sashimi, green salad, miso soup",null,$22.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-unag,Unagi,"seasoned sushi rice, unagi sashimi 12pc, ikura sashimi, green salad, miso soup",null,$22.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-chir,Chirashi,"seasoned sushi rice, assorted sashimi 12pc, ikura sashimi, green salad, miso soup",null,$22.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-chicKats,Chicken Katsu,"steamed rice, deep fried chicken, green salad, miso soup",null,$18.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-fishKats,Fish Katsu,"steamed rice, deep fried fish, green salad, miso soup",null,$18.90,null,null,null,null,FALSE,$0,FALSE
+Rice Bowls,Donburi,rb_do-bulg,Bulgogi,"steamed rice, bulgogi, vegetables, egg, green salad, miso soup",null,$19.90,null,null,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-caliRoll,California Roll,"crab, avocado, cucumber, tobiko",classic roll,$3.90,hand roll,$3.50,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-spicSalm,Spicy Salmon,"salmon, spicy sauce, tempura bits",classic roll,$5.90,hand roll,$4.90,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-salmAvoc,Salmon Avocado,"salmon, avocado",classic roll,$6.90,hand roll,$4.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-salmCucu,Salmon Cucumber,"salmon, cucumber",classic roll,$6.90,hand roll,$4.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-salmRoll,Salmon Roll,"salmon, seaweed*",classic roll,$6.90,hand roll,$5.90,null,*Please indicate if you want seaweed inside or outside,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-salmMangRoll,Salmon Mango Roll,"salmon, mango",classic roll,$7.90,hand roll,$5.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-philRoll,Philadelphia Roll,"salmon, cream cheese, cucumber",classic roll,$6.90,hand roll,$5.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-spicTunaRoll,Spicy Tuna,"tuna, spicy sauce, tempura bit",classic roll,$6.90,hand roll,$4.90,spicy,*Please indicate if you want seaweed inside or outside,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-tunaRoll,Tuna Roll,"tuna, seaweed*",classic roll,$7.90,hand roll,$5.90,null,*Please indicate if you want seaweed inside or outside,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-tunaMangRoll,Tuna Mango Roll,"tuna, mago",classic roll,$8.90,hand roll,$6.90,null,*Please indicate if you want seaweed inside or outside,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-whitTunaMangRoll,White Tuna Mango Roll,"white tuna, mango",classic roll,$8.90,hand roll,$6.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-negiToroMakiRoll, Negi Toro Maki ,"bluefin tuna toro, negi",classic roll,$9.90,hand roll,$6.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-neguShimSabaRoll,Negi Shime Saba Roll,"mackerel, green onion",classic roll,$9.90,hand roll,$7.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-negiHamaRoll,Negi Hamachi Roll,"negi, hamachi",classic roll,$7.90,hand roll,$6.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-hamaMangRoll,Hamachi Mango Roll,"hamachi, mango",classic roll,$8.90,hand roll,$6.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-sushShriRoll,Sushi Shrimp Roll,"sushi shrimp, seaweed",classic roll,$7.90,hand roll,$5.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-frieShriRoll,Deep Fried Shrimp Roll,"deep fried shrimp, unagi sauce",classic roll,$7.90,hand roll,$5.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-unagRoll,Unagi Roll,"bbq eel, cucumber, unagi sauce",classic roll,$7.90,hand roll,$5.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-tamaRoll,Tamago Roll,"japanese style egg, seaweed",classic roll,$5.90,hand roll,$4.90,null,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-spicKaniRoll,Spicy Kani,"crab, spicy sauce, tempura bits",classic roll,$6.90,hand roll,$4.90,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-spicScalRoll,Spicy Scallop,"scallop, spicy mayo, tempura bits",classic roll,$7.90,hand roll,$5.90,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Classic Rolls,mr_cr-spicScalRoll,Spicy Assorted Roll,"assorted fish, spicy sauce, tempura bits",classic roll,$6.90,hand roll,$4.90,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-avocRoll,Avocado Roll,avocado,classic roll,$4.90,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-kappMakiRoll,Kappa Maki,cucumber,classic roll,$4.90,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-avocCucuRoll,Avocado Cucumber Roll,"avocado, cucumber",classic roll,$4.90,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-avocMangRoll,Avocado Mango Roll,"avocado, mango",classic roll,$6.90,hand roll,$5.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-yamRoll,Yam Roll,deep fried yam,classic roll,$5.50,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-yamAvocRoll,Yam Avocado Roll,"deep fried yam, avocado",classic roll,$5.90,hand roll,$4.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-oshiRoll,Oshinko Roll,"pickled radish, seaweed",classic roll,$4.90,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-shitMushRoll,Shitake Mushroom Roll,"marinated shitake mushroom, seaweed",classic roll,$4.90,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-inarAvocRoll,Inari Avocado Roll,"marinated tofu, avocado",classic roll,$5.90,hand roll,$4.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Vegan Rolls,mr_vr-kanpRoll,Kanpyo Roll,sesaoned dried gourd strips,classic roll,$4.90,hand roll,$3.90,vegan,null,FALSE,$0,FALSE
+Maki Rolls,Deep Fried Rolls,mr_df-spicSalmCrea,Deep Fried Spicy Salmon Cream Cheese Roll,"salmon, cream cheese, deep fried avocado, unagi sauce, spicy mayo, jalapeño, green salad, miso soup",null,$14.90,null,null,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Deep Fried Rolls,mr_df-salmCreaRoll,Deep Fried Salmon Cream Cheese Roll,"salmon, cream cheese, deep fried avocado, unagi sauce, spicy mayo, green salad, miso soup",null,$13.90,null,null,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Deep Fried Rolls,mr_df-spicKimcFeveTowe,Spicy Kimchi Fever Tower,"salmon, kimchi, cream cheese, deep fried avocado, green salad, miso soup",null,$15.90,null,null,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Deep Fried Rolls,mr_df-tunaCreaRoll,Deep Fried Tuna Cream Cheese Roll,"tuna, cream cheese, deep fried avocado, unagi sauce, spicy mayo, green salad, miso soup",null,$14.90,null,null,spicy,null,FALSE,$0,FALSE
+Maki Rolls,Deep Fried Rolls,mr_df-kaniCreaRoll,Deep Fried Kani Cream Cheese Roll,"crab meat, cream cheese, deep fried avocado, unagi sauce, spicy mayo, green salad, miso soup",null,$12.90,null,null,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Vegan Dragon,sd_vd-vegaDynaRoll,Vegan Dynamite Roll,"yam, avocado, cucumber, deep fried yam topping",null,$9.95,null,null,vegan,null,FALSE,$0,FALSE
+Signature Dragons,Vegan Dragon,sd_vd-inarDragRoll,Inari Dragon Roll,"yam, avocado, cucumber, inari topping",regular,$12.90,dine in,$9.95,vegan,null,FALSE,$0,FALSE
+Signature Dragons,Vegan Dragon,sd_vd-mangDragRoll,Mango Dragon Roll,"yam, avocado, cucumber, mango topping",null,$13.90,null,null,vegan,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-origDynaRoll,Original Dynamite Roll,"shrimp, cucumber, avocado, crab meat",null,$9.95,null,null,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-greeDragRoll,Green Dragon Roll,"shrimp, cucumber, avocado, crab meat, avocado, sauce*",regular,$12.90,dine in,$9.95,null,*Please indicate if you want sauce,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-redDragRoll,Red Dragon Roll,"shrimp, cucumber, avocado, crab meat, salmon topping",regular,$13.90,dine in,$9.95,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-tunaDragRoll,Tuna Dragon Roll,"shrimp, cucumber, avocado, crab meat, tuna topping",regular,$14.90,dine in,$9.95,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-blacDragRoll,Black Dragon Roll,"shrimp, cucumber, avocado, crab meat, bbq eel topping",regular,$15.90,dine in,$9.95,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-rainShriDragRoll,Rainbow Shrimp Dragon Roll,"shrimp, cucumber, avocado, crab meat, assorted seafood topping",regular,$15.90,dine in,$9.95,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-spidMakiRoll,Spider Maki Roll,"soft crab, masago, cucumber, crab meat, avocado, unagi, spicy sauce",null,$14.90,null,null,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-futoRoll,Futomaki Roll,"cucumber, seasoned kanpyo, shitake mushrooms, tamago, oshinko",null,$13.90,null,null,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-spicSalmDragRoll,Spicy Salmon Dragon Roll,"shrimp, cucumber, avocado, crab meat, spicy salmon topping",regular,$13.90,dine in,$9.95,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-spicTunaDragRoll,Spicy Tuna Dragon Roll,"shrimp, cucumber, avocado, crab meat, spicy tuna topping",regular,$14.90,dine in,$9.95,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-rainDragRoll,Rainbow Dragon Roll,"cucumber, avocado, crab meat, assorted seafood topping",regular,$13.90,dine in,$9.95,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-oceaMangDragRoll,Ocean Mango Dragon Roll,"spicy salmon, tuna, white tuna, avocado, mango topping, sushi sauce topping",null,$15.90,null,null,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-crunDragRoll,Crunchy Dragon Roll,"shrimp, cucumber, avocado, crab meat, tempura bits topping, spicy sauce topping",regular,$11.90,dine in,$9.95,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-whitCrabDragRoll,White Crab Dragon Roll,"shrimp, cucumber, avocado, crab meat, mayo topping",null,$13.90,null,null,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-crunOnioDragRoll,Crunchy Onion Dragon Roll,"shrimp, cucumber, avocado, crab meat, crunchy onion topping",regular,$13.90,dine in,$9.95,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-cateRoll,Caterpillar Roll,"bbq eel, cucumber, avocado topping",null,$13.90,null,null,null,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-tunaLoveMakiRoll,Tuna Love Maki Roll,"tuna, avocado, spicy tuna topping",null,$14.90,null,null,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Premium Dragon,sd_pd-salmLoveMakiRoll,Salmon Love Maki Roll,"salmon, avocado, spicy salmon topping",null,$13.90,null,null,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-aburSalmDragRoll,Aburi Salmon Dragon Roll,"shrimp, cucumber, avocado, crab meat, torched salmon topping, sauce topping",regular,$13.90,dine in,$9.90,null,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-aburTunaDragRoll,Aburi Tuna Dragon Roll,"shrimp, cucumber, avocado, crab meat, torched tuna topping, sauce topping",regular,$14.90,dine in,$9.90,null,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-aburWhitTunaDragRoll,Aburi White Tuna Dragon Roll,"shrimp, cucumber, avocado, crbab meat, torched white tuna topping, sauce topping",regular,$14.90,dine in,$9.90,null,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-aburAlbaTunaDragRoll,Aburi Albacore Tuna Dragon Roll,"shrimp, cucumber, avocado, crab meat, torched albacore tuna topping, sauce topping",regular,$14.90,dine in,$9.90,null,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-aburRainDragRoll,Aburi Rainbow Dragon Roll,"shrimp, cucumber, avocado, crab meat, torched assorted fish topping, sauce topping",regular,$14.90,dine in,$9.90,null,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-aburSpicSalmRoll,Aburi Spicy Salmon Roll,"spicy salmon, cream cheese, avocado, jalapeno, torched salmon topping",regular,$14.90,dine in,$9.90,spicy,null,FALSE,$0,FALSE
+Signature Dragons,Aburi Dragon,sd_ad-lobsKingRoll,Lobster King Roll,"yam, avocado, cucumber, crab, lobster, white tuna topping, torched tobiko topping",null,$18.90,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-salmSush,Salmon Sushi,null,2pc,$5.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-tunaSush,Tuna Sushi,null,2pc,$5.90,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-whitTunaSush,White Tuna Sushi,null,2pc,$5.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-albaTunaSush,Albacore Tuna Sushi,null,2pc,$5.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-hamaSush,Hamachi Sushi,null,2pc,$5.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-ikaSush,Ika Sushi,null,2pc,$4.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-takoSush,Tako Sushi,null,2pc,$4.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-unagSush,Unagi Sushi,null,2pc,$5.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-chutSush,Chutoro Sushi,null,2pc,$8.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-otorSush,Otoro Sushi,null,2pc,$10.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-shimSabaSush,Shime Saba Sushi,null,2pc,$5.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-tamaSush,Tamago Sushi,null,2pc,$3.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-ikurSush,Ikura Sushi,null,2pc,$10.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-tobiSush,Tobiko Sushi,null,2pc,$4.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-hotaSush,Hotate Sushi,null,2pc,$8.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-kaniSush,Kani Sushi,null,2pc,$4.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sushi,al_su-ebiSush,Ebi Sushi,null,2pc,$5.90,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-salmSash,Salmon Sashimi,null,2pc,$6.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-tunaSash,Tuna Sashimi,null,3pc,$6.90,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-whitTunaSash,White Tuna Sashimi,null,3pc,$6.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-albaTunaSash,Albacore Tuna Sashimi,null,3pc,$6.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-hamaSash,Hamachi Sashimi,null,3pc,$6.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-ikaSash,Ika Sashimi,null,3pc,$5.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-talks ash,Tako Sashimi,null,3pc,$5.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-unagSash,Unagi Sashimi,null,3pc,$6.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-chitSash,Chutoro Sashimi,null,3pc,$9.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-otorSash,Otoro Sashimi,null,3pc,$11.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-shimSabaSash,Shime Saba Sashimi,null,3pc,$6.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-tamaSash,Tamago Sashimi,null,3pc,$4.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-ikurSash,Ikura Sashimi,null,3pc,$10.50,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-tobiSash,Tobiko Sashimi,null,3pc,$4.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-hotaSash,Hotate Sashimi,null,3pc,$9.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-kaniSash,Kani Sashimi,null,3pc,$4.00,null,null,null,null,FALSE,$0,FALSE
+A La Carte,Sashimi,al_sa-ebiSash,Ebi Sashimi,null,3pc,$6.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-dynaSpec,Dynamite Special,"5pc sushi, 8pc original dynamite roll",3pc,$14.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-spicMakiSpec,Spicy Maki Special,"8pc spicy salmon, 8pc spicy tuna",13pc,$13.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-spicMakiComb,Spicy Maki Combo,"8pc spicy salmon, 8pc spicy tuna, 8pc spicy california or spicy kani*",16pc ,$16.90,null,null,spicy,*Please indicate choice between spicy california or spicy kani,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-spicDeluMakiComb,Spicy Deluxe Maki Combo,"8pc spicy salmon, 8pc spicy tuna, 8pc spicy california, 8pc spicy assorted",24pc,$21.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushCombA,Sushi Combo A,"10pc sushi (chefs choice), 6pc california roll or spicy salmon roll*",32pc,$20.90,null,null,spicy,*Please indicate choice between california roll or spicy salmon roll,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushCombB,Sushi Combo B,"12pc sushi (chefs choice), 6pc california roll or spicy salmon roll*",16pc,$22.90,null,null,spicy,*Please indicate choice between california roll or spicy salmon roll,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushCombC,Sushi Combo C,"10pc sushi (chefs choice), 10pc original dynamite",18pc,$22.90,null,null,null,null,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushCombD,Sushi Combo D,"14pc sushi (chefs choice), 6pc california roll or spicy salmon roll*",20pc,$24.90,null,null,spicy,*Please indicate choice between california roll or spicy salmon roll,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushCombE,Sushi Combo E,"12pc sushi (chefs choice), 6pc california roll or spicy salmon roll*, 6pc gyoza",20pc,$27.90,null,null,spicy,*Please indicate choice between california roll or spicy salmon roll,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushCombF,Sushi Combo F,"12pc sushi (chefs choice), 9pc dragon roll*, 6pc gyoza",24pc,$31.90,null,null,null,*Please indicate choice of any dragon roll,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushPremComb,Sushi Premium Combo,"10pc sushi (chefs choice), any premium dragon roll*",27pc,$24.90,null,null,null,*Please indicate any choice of any premium dragon roll,FALSE,$0,TRUE
+Combos & Trays,Sushi Combo,ct_sc-sushSashCombA,Sushi Sashimi Combo A (Chef's Choice),"6pc sushi, 6pc sashimi",10pc,$17.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushSashCombB,Sushi Sashimi Combo B (Chef's Choice),"7pc sushi, 9pc sashimi",12pc,$22.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushSashCombC,Sushi Sashimi Combo C (Chef's Choice),"11pc sushi, 12pc sashimi",16pc,$29.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-CombDS7A,Combo DS 7A,"6pc sushi (chef's choice), 8pc spicy salmon, 4pc original dynamite, 3pc salmon sashimi, 8pc salmon hoso maki, 2pc shrimp tempura",23pc,$32.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-combDS7B,Combo DS 7B,"6pc sushi (chef's choice), 9pc sashimi (chef's choice), 8pc spicy salmon, 4pc original dynamite, 8pc salmon hoso maki, 2pc shrimp tempura",31pc,$37.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-combDS6,Combo DS 6,"6pc sushi (chef's choice), 9pc sashimi (chef's choice), 1pc spicy salmon hand roll",37pc,$25.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-combDS5,Combo DS 5,9pc sashimi (chef's choice),16pc,$12.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sashCombA,Sashimi A,12pc sashimi (chef's choice),9pc,$19.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sashCombB,Sashimi B,15pc sashimi (chef's choice),12pc,$23.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sashCombC,Sashimi C,21pc sashimi (chef's choice),15pc,$30.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmSushSashHFComboA,Salmon Sushi Sashimi Hot Food Combo A,"6pc salmon sushi, 6pc salmon sashimi, 6pc gyoza",21pc,$23.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmSushSashHFComboB,Salmon Sushi Sashimi Hot Food Combo B,"8pc salmon sushi, 9pc salmon sashimi, 6pc takoyaki",18pc,$33.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushA,Sushi A,7pc sushi (chef's choice),23pc,$12.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushB,Sushi B,10pc sushi (chef's choice),7pc,$17.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushC,Sushi C,15pc sushi (chef's choice),10pc,$24.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushD,Sushi D,20pc sushi (chef's choice),15pc,$32.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-sushE,Sushi E,27pc sushi (chef's choice),20pc,$38.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-rollCombA,Roll Combo A,"spicy salmon roll, california roll, salmon avocado",27pc,$17.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-rollCombB,Roll Combo B,"spicy salmon roll, spicy kani roll, salmon avocado roll, red dragon roll",null,$25.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-rollCombC,Roll Combo C,"spicy salmon roll, salmon mango roll, philadelphia roll, red dragon roll, aburi salmon dragon roll",null,$30.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-vegaRollCombA,Vegan Roll Combo A (DV2),"avocado cucumber roll, vegan dragon roll",null,$14.90,null,null,vegan,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-vegaRollCombB,Vegan Roll Combo B (DV3),"avocado cucumber roll, vegan dragon roll, yam avocado roll",null,$18.90,null,null,vegan,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-vegaRollCombC,Vegan Roll Combo C (DV4),"avocado cucumber roll, vegan dragon roll, yam avocado roll",null,$23.90,null,null,vegan,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmLove1,Salmon Lover 1 (DS1),"3pc salmon sashimi, 3pc salmon sushi, 8pc spicy salmon",null,$17.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmLove2,Salmon Lover 2 (DS2),"aburi salmon dragon, 8pc spicy salmon",14pc,$17.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmLoveA,Salmon Lover A,"5pc salmon sushi, 6pc salmon sashimi, 8pc salmon avocado roll",null,$22.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmLoveB,Salmon Lover B,"6pc salmon sushi, 6pc salmon sashimi, 8pc philadelphia roll, 8pc salmon avocado roll",19pc,$29.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-salmLoveC,Salmon Lover C,"6pc salmon sushi, 9pc salmon sashimi, 8pc philadelphia roll, 8pc salmon avocado roll, 8pc salmon mango roll",28pc,$39.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-tunaLoveA,Tuna Lover A,"5pc tuna sushi, 6pc tuna sashimi, 8pc spicy tuna ",39pc,$23.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Sushi Combo,ct_sc-tunaLoveB,Tuna Lover B,"3pc tuna sushi, 3pc bluefin tuna toro sushi, 6pc tuna sashimi, tuna cucumber roll, spicy tuna roll",19pc,$32.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-partTrayS,DS 10 Small Party Tray,"10pc assorted nigiri sushi, 3pc salmon sashimi, 3pc tuna sashimi, 6pc california roll, 8pc spicy salmon, 8pc spicy tuna",null,$37.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-partTrayM,DS 11 Medium Party Tray,"12pc assorted nigiri sushi, 3pc salmon sashimi, 3pc tuna sashimi, 6pc california roll, 8pc spicy salmon, 8pc spicy tuna",28pc,$49.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-partTrayL,DS 12 Large Party Tray ,"16pc assorted nigiri sushi, 3pc salmon sashimi, 3pc tuna sashimi, 3pc white tuna sashimi, 6pc california roll, 8pc spicy salmon, 8pc spicy tuna, 8pc salmon avocado, 8pc original dynamite",40pc,$69.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-rollPartTrayS,Roll Party Tray A,"8pc salmon firecracker, 9pc red dragon roll, 8pc spicy salmon, 6pc california roll",63pc,$33.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-rollPartTrayM,Roll Party Tray B,"8pc salmon firecracker, 9pc red dragon roll, 9pc original dynamite, 8pc spicy salmon, 6pc california roll",31pc,$44.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-rollPartTrayL,Roll Party Tray C,"8pc salmon firecracker, 9pc red dragon roll, 9pc original dynamite, 8pc spicy salmon, 6pc california roll, philadelphia roll, black dragon roll",40pc,$55.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-vegaRollPartTrayS,Vegan Roll Party Tray Small,"9pc vegan dynamite, 8pc yam and avocado, 8pc avocado cucumber roll, 8pc mango avocado roll, 6pc cucumber hoso maki",null,$33.90,null,null,vegan,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-vegaRollPartTrayM,Vegan Roll Party Tray Medium,"9pc vegan dynamite, 8pc yam and avocado, 8pc avocado cucumber roll, 8pc mango avocado roll, 6pc cucumber hoso maki, 8pc avocado maki, 8pc avocado inari",39pc,$44.90,null,null,vegan,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-vegaRollPartTrayL,Vegan Roll Party Tray Large,"9pc vegan dynamite, 8pc yam and avocado, 8pc avocado cucumber roll, 8pc mango avocado roll, 6pc cucumber hoso maki, 8pc avocado maki, 8pc avocado inari, 2pc avocado yubu, 8pc mango dragon roll",55pc,$55.90,null,null,vegan,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushRollPartTrayS,Sushi & Roll Party Tray A,"10pc sushi (chef's choice), 8pc california roll, 8pc spicy salmon, 8pc salmon avocado",65pc,$39.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushRollPartTrayM,Sushi & Roll Party Tray B,"16pc sushi (chef's choice), 8pc california roll, 8pc spicy salmon, 8pc salmon avocado",34pc,$49.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushRollPartTrayL,Sushi & Roll Party Tray C,"16pc sushi (chef's choice), 8pc california roll, 8pc spicy salmon, 8pc salmon avocado, 8pc spicy tuna, 6pc hoso avocado",40pc,$59.90,null,null,spicy,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushSashRollPartTray,Sushi Sashimi & Roll Party Tray,"12pc assorted nigiri sushi, 3pc salmon sashimi, 8pc california roll, 8pc salmon avocado roll",54pc,$39.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushSashRollPartTrayS,Sushi Sashimi & Roll Party Tray Small,null,31pc,$58.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushSashRollPartTrayM,Sushi Sashimi & Roll Party Tray Medium,null,null,$78.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushSashRollPartTrayL,Sushi Sashimi & Roll Party Tray Large,null,null,$99.90,null,null,null,null,FALSE,$0,FALSE
+Combos & Trays,Party Tray,ct_pt-sushSashRollPartTrayXL,Sushi Sashimi & Roll Party Tray XX-Large,null,null,$129.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-wate,Water,null,null,$2.25,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-nest,Nestea,null,null,$2.95,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-coke,Coke,null,null,$2.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-dietCoke,Diet Coke,null,null,$2.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-cokeZero,Coke Zero,null,null,$2.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-spri,Sprite,null,null,$2.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Drinks,be_dr-canaDry,Canada Dry,null,null,$2.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-asah350,Asahi,null,null,$6.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-asa500,Asahi,null,350mL,$8.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-sapp350,Sapporo,null,500mL,$6.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-sapp500,,null,350mL,$8.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-coro,Corona,null,500mL,$6.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-mols,Molson,null,350mL,$6.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-hotSakeS,Hot Sake,null,350mL,$6.50,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-hotSakeL,,null,Small,$18.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-coldSake,Cold Sake,null,Large,$17.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-whitWineS,White Wine,null,null,$8.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-whitWineL,,null,6oz,$25.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-redWineS,Red Wine,null,Bottle,$8.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-redWineL,,null,6oz,$25.00,null,null,null,null,FALSE,$0,FALSE
+Beverages,Alcohol,be_al-soju,Soju,null,Bottle,$22.00,null,null,null,null,FALSE,$0,FALSE
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,null,,,,,,,,
