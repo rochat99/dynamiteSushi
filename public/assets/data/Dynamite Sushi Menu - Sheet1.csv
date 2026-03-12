@@ -20,8 +20,8 @@ Starters,Appetizers,st_ap-miso,Miso Soup,null,null,$1.90,null,null,null,null,FAL
 Starters,Appetizers,st_ap-tako,Takoyaki,"green onion, ginger, tempura bits, octopus",null,$7.90,null,null,null,null,FALSE,$0,FALSE
 Starters,Appetizers,st_ap-vegeRoll,Vegetable Spring Roll,null,5pc,$4.50,8pc,$5.90,null,null,FALSE,$0,FALSE
 Starters,Appetizers,st_ap-edam,Edamame,null,null,$3.90,null,null,null,null,FALSE,$0,FALSE
-Starters,Appetizers,st_ap-beefGyo,Beef Gyoza,null,6pc,$5.90,null,null,null,null,FALSE,$0,FALSE
-Starters,Appetizers,st_ap-vegeGyo,Vegetable Gyoza,null,6pc,$5.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-beefGyoz,Beef Gyoza,null,6pc,$5.90,null,null,null,null,FALSE,$0,FALSE
+Starters,Appetizers,st_ap-vegeGyoz,Vegetable Gyoza,null,6pc,$5.90,null,null,null,null,FALSE,$0,FALSE
 Starters,Appetizers,st_ap-agedTofu,Agedashi Tofu,null,4pc,$5.90,7pc,$7.90,null,null,FALSE,$0,FALSE
 Starters,Appetizers,st_ap-steaEbiShum,Steamed Ebi Shumai,null,6pc,$7.50,8pc,$8.90,null,null,FALSE,$0,FALSE
 Starters,Appetizers,st_ap-frieEbiShum6,Deep Fried Ebi Shumai,null,6pc,$7.50,8pc,$8.90,null,null,FALSE,$0,FALSE
