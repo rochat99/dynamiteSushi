@@ -1,8 +1,8 @@
-$colorRed: #fc0002;
-$colorOrange: #f88d04;
-$colorGreen: #28ba65;
-$colorBlue: #0071b0;
-$colorPurple: #824bd0;
+$red: #fc0002;
+$orange: #f88d04;
+$green: #28ba65;
+$blue: #0071b0;
+$purple: #824bd0;
 
 @mixin inter ($size, $weight, $style: normal, $color: black) {
     font-family: 'Inter', sans-serif;
