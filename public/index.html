@@ -27,16 +27,20 @@
 
         <div id="specialsLinks">
             <article id="bentoBoxes">
-                <a>BENTO</a>
+                <a data-special="bentoBoxes">BENTO</a>
             </article>
 
             <article id="weeklySpecial">
-                <a>WEEKLY</a>
+                <a data-special="weeklySpecial">WEEKLY</a>
             </article>
-
+            
             <article id="saleSpecial">
-                <a>SALES</a>
+                <a data-special="saleSpecial">SALES</a>
             </article>
+        </div>
+
+        <div id="specialsCarousel">
+            <!-- cards load here dynamically -->
         </div>
     </section>
     
@@ -47,10 +51,18 @@
         
             <nav id="filterArea">
                 <ul>
-                    <li id="spicy" class="circle"></li>
-                    <li id="vegan" class="circle"></li>
-                    <li id="sale" class="circle"></li>
-                    <li id="chefsChoice" class="circle"></li>
+                    <li id="spicy" class="circle">
+                        <div class="icon"></div>
+                    </li>
+                    <li id="vegan" class="circle">
+                        <div class="icon"></div>
+                    </li>
+                    <li id="sale" class="circle">
+                        <div class="icon"></div>
+                    </li>
+                    <li id="chefsChoice" class="circle">
+                        <div class="icon"></div>
+                    </li>
                 </ul>
             </nav>
         </section>
@@ -61,15 +73,9 @@
 
         <div class="expandedPanel left" id="startersPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="salad">
-                    <h2>SALAD</h2>
-                </article>
-                <article class="subCategory" data-subcategory="appetizers">
-                    <h2>APPETIZERS</h2>
-                </article>
-                <article class="subCategory" data-subcategory="yubu">
-                    <h2>YUBU</h2>
-                </article>
+                <article class="subCategory" data-subcategory="salad"></article>
+                <article class="subCategory" data-subcategory="appetizers"></article>
+                <article class="subCategory" data-subcategory="yubuInari"></article>
             </div>
         </div>
 
@@ -79,9 +85,7 @@
 
         <div class="expandedPanel middle" id="kitchenEntreesPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="hotFoods">
-                    <h3>HOT FOODS</h3>
-                </article>
+                <article class="subCategory" data-subcategory="hotFood"></article>
             </div>
         </div>
 
@@ -91,12 +95,8 @@
 
         <div class="expandedPanel" id="sushiFusionPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="sushiPizza">
-                    <h3>SUSHI PIZZA</h3>
-                </article>
-                <article class="subCategory" data-subcategory="sushiBurrito">
-                    <h3>SUSHI BURRITO</h3>
-                </article>
+                <article class="subCategory" data-subcategory="sushiPizza"></article>
+                <article class="subCategory" data-subcategory="sushiBurrito"></article>
             </div>
         </div>
 
@@ -106,12 +106,8 @@
 
         <div class="expandedPanel" id="riceBowlsPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="poke">
-                    <h3>POKE</h3>
-                </article>
-                <article class="subCategory" data-subcategory="donburi">
-                    <h3>DONBURI</h3>
-                </article>
+                <article class="subCategory" data-subcategory="poke"></article>
+                <article class="subCategory" data-subcategory="donburi"></article>
             </div>
         </div>
 
@@ -121,15 +117,9 @@
 
         <div class="expandedPanel" id="makiRollsPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="classicRolls">
-                    <h3>CLASSIC ROLLS</h3>
-                </article>
-                <article class="subCategory" data-subcategory="veganRolls">
-                    <h3>VEGAN ROLLS</h3>
-                </article>
-                <article class="subCategory" data-subcategory="deepFriedRolls">
-                    <h3>DEEP FRIED ROLLS</h3>
-                </article>
+                <article class="subCategory" data-subcategory="classicRolls"></article>
+                <article class="subCategory" data-subcategory="veganRolls"></article>
+                <article class="subCategory" data-subcategory="deepFriedRolls"></article>
             </div>
         </div>
 
@@ -139,15 +129,9 @@
 
         <div class="expandedPanel" id="signatureDragonsPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="veganDragon">
-                    <h3>VEGAN DRAGON</h3>
-                </article>
-                <article class="subCategory" data-subcategory="premiumDragon">
-                    <h3>PREMIUM DRAGON</h3>
-                </article>
-                <article class="subCategory" data-subcategory="aburiDragon">
-                    <h3>ABURI DRAGON</h3>
-                </article>
+                <article class="subCategory" data-subcategory="veganDragon"></article>
+                <article class="subCategory" data-subcategory="premiumDragon"></article>
+                <article class="subCategory" data-subcategory="aburiDragon"></article>
             </div>
         </div>
 
@@ -157,12 +141,8 @@
 
         <div class="expandedPanel" id="aLaCartePanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="sushi">
-                    <h3>SUSHI</h3>
-                </article>
-                <article class="subCategory" data-subcategory="sashimi">
-                    <h3>SASHIMI</h3>
-                </article>
+                <article class="subCategory" data-subcategory="sushi"></article>
+                <article class="subCategory" data-subcategory="sashimi"></article>
             </div>
         </div>
 
@@ -172,12 +152,8 @@
 
         <div class="expandedPanel" id="combosAndTraysPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="sushiCombo">
-                    <h3>SUSHI COMBOS</h3>
-                </article>
-                <article class="subCategory" data-subcategory="partyTray">
-                    <h3>PARTY TRAYS</h3>
-                </article> 
+                <article class="subCategory" data-subcategory="sushiCombo"></article>
+                <article class="subCategory" data-subcategory="partyTray"></article> 
             </div>
         </div>
 
@@ -187,12 +163,8 @@
 
         <div class="expandedPanel" id="beveragesPanel">
             <div class="menuItemsContainer">
-                <article class="subCategory" data-subcategory="drinks">
-                    <h3>DRINKS</h3>
-                </article>
-                <article class="subCategory" data-subcategory="alcohol">
-                    <h3>ALCOHOL</h3>
-                </article>
+                <article class="subCategory" data-subcategory="drinks"></article>
+                <article class="subCategory" data-subcategory="alcohol"></article>
             </div>
         </div>
     </section>

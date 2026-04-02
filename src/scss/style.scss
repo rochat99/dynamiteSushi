@@ -7,21 +7,10 @@
 
 // GENERAL STYLING
 
-h1 {
-    @include inter(28px, 800)
-}
-
-h2 {
-    @include inter(16px, 800) 
-}
-
-h3 {
-    @include inter(12px, 400)
-}
-
-p {
-    @include inter(10px, 400)
-}
+h1 { @include inter(28px, 800) }
+h2 { @include inter(16px, 800) }
+h3 { @include inter(12px, 400) }
+p  { @include inter(10px, 400) }
 
 
 // HEADER
@@ -34,27 +23,65 @@ header {
     justify-content: center;
     align-items: center;
 
-    img {
-        height: 30px;
-    }
+    img { height: 30px; }
 }
 
-//MENU ITEM CARDS
+// MENU ITEM CARDS
 
 .card {
   display: flex;
   flex-direction: column;
   width: 150px;
   min-height: 280px;
-  height: 280px;      // fixed height by default
+  height: 280px;
   background-color: grey;
   align-items: center;
   text-align: center;
   border-radius: 10px;
-  overflow: hidden;   // clips content to card height when collapsed
+  overflow: hidden;
+
+  .tags {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    // gap: 4px;
+
+    .tag {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: white;
+
+      &.spicy { 
+        // background-color: $red;
+        -webkit-mask: url('/assets/images/spicy.svg') center / contain no-repeat;
+        mask: url('/assets/images/spicy.svg') center / contain no-repeat;
+      }
+
+      &.vegan { 
+        // background-color: $green; 
+        -webkit-mask: url('/assets/images/vegan.svg') center / contain no-repeat;
+        mask: url('/assets/images/vegan.svg') center / contain no-repeat;
+      }
+
+      &.sale { 
+        // background-color: $orange; 
+        -webkit-mask: url('/assets/images/sale.svg') center / contain no-repeat;
+        mask: url('/assets/images/sale.svg') center / contain no-repeat;
+      }
+
+      &.chefsChoice { 
+        // background-color: $blue; 
+        -webkit-mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
+        mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
+      }
+    }
+  }
 
   &.is-expanded {
-    height: auto;     // only grows when expanded
+    height: auto;
     overflow: visible;
   }
 
@@ -65,9 +92,7 @@ header {
     width: 100%;
     padding: 0 8px;
 
-    h3 {
-      padding: 2px;
-    }
+    h3 { padding: 2px; }
 
     .ingredients-wrapper {
       position: relative;
@@ -84,9 +109,7 @@ header {
         pointer-events: none;
       }
 
-      &.no-fade::after {
-        display: none;
-      }
+      &.no-fade::after { display: none; }
     }
 
     button {
@@ -103,34 +126,35 @@ header {
 }
 
 // SPECIALS SECTION
+
+#specialsLinks a.active {
+  border-bottom: 3px solid black;
+}
+
 #specialsSection {
   text-align: center;
   margin: 40px 0;
 
-  h1 {
-    margin-bottom: 20px;
-  }
+  h1 { margin-bottom: 20px; }
 
   #specialsLinks {
-     display: flex;
-     flex-direction: row;
-     align-items: space-around;
-     justify-content: space-around;
-     padding: 0 400px;
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 400px;
+
     a {
       @include inter(16px, 800);
       cursor: pointer;
+      text-decoration: none;
 
-      &.active {
-        border-bottom: 3px solid black;
-      }
+      // &.active { border-bottom: 3px solid black; }
 
       &:hover {
         border-bottom: 3px solid black;
         transition: border 0.2s ease;
       }
-    } 
+    }
   }
 
   #specialsCarousel {
@@ -139,20 +163,123 @@ header {
     overflow-x: auto;
     gap: 20px;
     padding: 20px 40px;
-    scroll-snap-type: x mandatory;
+    scroll-padding-left: 40px;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-
-    // hide scrollbar visually but keep it functional
     scrollbar-width: none;
+    cursor: grab;
+
     &::-webkit-scrollbar { display: none; }
 
+    &.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
     .card {
-      flex-shrink: 0; // prevent cards from squishing
+      flex-shrink: 0;
       scroll-snap-align: start;
     }
   }
 }
 
+// FILTERS
+
+#filterArea {
+
+  ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.2s ease;
+
+    // the icon sits as a mask on a coloured div inside the circle
+    .icon {
+      width: 24px;
+      height: 24px;
+      transition: background-color 0.2s ease;
+    }
+  }
+
+  // each filter gets its own colour
+  #spicy {
+    border: 2px solid $red;
+
+    .icon {
+      background-color: $red;
+      -webkit-mask: url('/assets/images/spicy.svg') center / contain no-repeat;
+      mask: url('/assets/images/spicy.svg') center / contain no-repeat;
+    }
+
+    &:hover { background-color: rgba($red, 0.15); }
+    &.active {
+      background-color: $red;
+      .icon { background-color: white; }
+    }
+  }
+
+  #vegan {
+    border: 2px solid $green;
+
+    .icon {
+      background-color: $green;
+      -webkit-mask: url('/assets/images/vegan.svg') center / contain no-repeat;
+      mask: url('/assets/images/vegan.svg') center / contain no-repeat;
+    }
+
+    &:hover { background-color: rgba($green, 0.15); }
+    &.active {
+      background-color: $green;
+      .icon { background-color: white; }
+    }
+  }
+
+  #sale {
+    border: 2px solid $orange;
+
+    .icon {
+      background-color: $orange;
+      -webkit-mask: url('/assets/images/sale.svg') center / contain no-repeat;
+      mask: url('/assets/images/sale.svg') center / contain no-repeat;
+    }
+
+    &:hover { background-color: rgba($orange, 0.15); }
+    &.active {
+      background-color: $orange;
+      .icon { background-color: white; }
+    }
+  }
+
+  #chefsChoice {
+    border: 2px solid $blue;
+
+    .icon {
+      background-color: $blue;
+      -webkit-mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
+      mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
+    }
+
+    &:hover { background-color: rgba($blue, 0.15); }
+    &.active {
+      background-color: $blue;
+      .icon { background-color: white; }
+    }
+  }
+}
 
 // MENU SECTION
 
@@ -165,7 +292,7 @@ header {
 }
 
 #headerFilterArea {
-  grid-column: 1 / -1;  // was span 3, same thing but explicit
+  grid-column: 1 / -1;
   text-align: center;
 
   nav {
@@ -207,9 +334,9 @@ header {
     button { color: white; }
 
     &:hover {
-        background-color: $red;
-        border: red 2px solid;
-        border-bottom: none;
+      background-color: $red;
+      border: red 2px solid;
+      border-bottom: none;
     }
   }
 
@@ -217,52 +344,48 @@ header {
     background-color: rgba($red, 0.5);
     border: white 2px solid;
   }
-  
 }
 
 .expandedPanel {
   grid-column: 1 / -1;
   display: none;
   border: 2px solid $red;
-  
-  background: white; 
+  background: white;
 
-  &.visible {
-    display: block;
-  }
+  &.visible { display: block; }
 
   .menuItemsContainer {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; 
     padding: 40px;
-    gap: 20px;
-
-    .subCategory {
-      width: 100%;
-
-      h2, h3 {
-        text-align: left;
-        margin-bottom: 10px;
-        padding: 0 0 6px 0;
-        border-bottom: 1px solid rgba($red, 0.3);
-      }
-
-      .cardsRow {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 15px;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        scrollbar-width: none;
-        &::-webkit-scrollbar { display: none; }
-      }
-    }
+    gap: 30px;
   }
 
-  &.left {border-radius: 0 20px 20px 20px}
-  &.middle {border-radius: 20px}
-  &.right {border-radius: 20px 0 20px 20px}
+  &.left   { border-radius: 0 20px 20px 20px; }
+  &.middle { border-radius: 20px; }
+  &.right  { border-radius: 20px 0 20px 20px; }
+}
+
+// SUBCATEGORY (shared between menu panels)
+
+.subCategory {
+  width: 100%;
+
+  .subcategory-title {
+    @include inter(12px, 400);
+    text-align: left;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid $red;
+  }
+
+  .cardsRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    width: 100%;
+    padding-bottom: 10px;
+  }
 }
 
 // FOOTER

@@ -59,6 +59,35 @@ header img {
   border-radius: 10px;
   overflow: hidden;
 }
+.card .tags {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.card .tags .tag {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+}
+.card .tags .tag.spicy {
+  -webkit-mask: url("/assets/images/spicy.svg") center/contain no-repeat;
+  mask: url("/assets/images/spicy.svg") center/contain no-repeat;
+}
+.card .tags .tag.vegan {
+  -webkit-mask: url("/assets/images/vegan.svg") center/contain no-repeat;
+  mask: url("/assets/images/vegan.svg") center/contain no-repeat;
+}
+.card .tags .tag.sale {
+  -webkit-mask: url("/assets/images/sale.svg") center/contain no-repeat;
+  mask: url("/assets/images/sale.svg") center/contain no-repeat;
+}
+.card .tags .tag.chefsChoice {
+  -webkit-mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
+  mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
+}
 .card.is-expanded {
   height: auto;
   overflow: visible;
@@ -101,6 +130,10 @@ header img {
   line-height: 1;
 }
 
+#specialsLinks a.active {
+  border-bottom: 3px solid black;
+}
+
 #specialsSection {
   text-align: center;
   margin: 40px 0;
@@ -111,7 +144,6 @@ header img {
 #specialsSection #specialsLinks {
   display: flex;
   flex-direction: row;
-  align-items: space-around;
   justify-content: space-around;
   padding: 0 400px;
 }
@@ -122,9 +154,7 @@ header img {
   font-style: normal;
   color: black;
   cursor: pointer;
-}
-#specialsSection #specialsLinks a.active {
-  border-bottom: 3px solid black;
+  text-decoration: none;
 }
 #specialsSection #specialsLinks a:hover {
   border-bottom: 3px solid black;
@@ -136,16 +166,115 @@ header img {
   overflow-x: auto;
   gap: 20px;
   padding: 20px 40px;
-  scroll-snap-type: x mandatory;
+  scroll-padding-left: 40px;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
 }
 #specialsSection #specialsCarousel::-webkit-scrollbar {
   display: none;
 }
+#specialsSection #specialsCarousel.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
 #specialsSection #specialsCarousel .card {
   flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+#filterArea ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  justify-content: center;
+  padding: 12px 0;
+}
+#filterArea .circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+#filterArea .circle .icon {
+  width: 24px;
+  height: 24px;
+  transition: background-color 0.2s ease;
+}
+#filterArea #spicy {
+  border: 2px solid #fc0002;
+}
+#filterArea #spicy .icon {
+  background-color: #fc0002;
+  -webkit-mask: url("/assets/images/spicy.svg") center/contain no-repeat;
+  mask: url("/assets/images/spicy.svg") center/contain no-repeat;
+}
+#filterArea #spicy:hover {
+  background-color: rgba(252, 0, 2, 0.15);
+}
+#filterArea #spicy.active {
+  background-color: #fc0002;
+}
+#filterArea #spicy.active .icon {
+  background-color: white;
+}
+#filterArea #vegan {
+  border: 2px solid #28ba65;
+}
+#filterArea #vegan .icon {
+  background-color: #28ba65;
+  -webkit-mask: url("/assets/images/vegan.svg") center/contain no-repeat;
+  mask: url("/assets/images/vegan.svg") center/contain no-repeat;
+}
+#filterArea #vegan:hover {
+  background-color: rgba(40, 186, 101, 0.15);
+}
+#filterArea #vegan.active {
+  background-color: #28ba65;
+}
+#filterArea #vegan.active .icon {
+  background-color: white;
+}
+#filterArea #sale {
+  border: 2px solid #f88d04;
+}
+#filterArea #sale .icon {
+  background-color: #f88d04;
+  -webkit-mask: url("/assets/images/sale.svg") center/contain no-repeat;
+  mask: url("/assets/images/sale.svg") center/contain no-repeat;
+}
+#filterArea #sale:hover {
+  background-color: rgba(248, 141, 4, 0.15);
+}
+#filterArea #sale.active {
+  background-color: #f88d04;
+}
+#filterArea #sale.active .icon {
+  background-color: white;
+}
+#filterArea #chefsChoice {
+  border: 2px solid #0071b0;
+}
+#filterArea #chefsChoice .icon {
+  background-color: #0071b0;
+  -webkit-mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
+  mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
+}
+#filterArea #chefsChoice:hover {
+  background-color: rgba(0, 113, 176, 0.15);
+}
+#filterArea #chefsChoice.active {
+  background-color: #0071b0;
+}
+#filterArea #chefsChoice.active .icon {
+  background-color: white;
 }
 
 #menuSection {
@@ -223,30 +352,9 @@ header img {
 }
 .expandedPanel .menuItemsContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   padding: 40px;
-  gap: 20px;
-}
-.expandedPanel .menuItemsContainer .subCategory {
-  width: 100%;
-}
-.expandedPanel .menuItemsContainer .subCategory h2, .expandedPanel .menuItemsContainer .subCategory h3 {
-  text-align: left;
-  margin-bottom: 10px;
-  padding: 0 0 6px 0;
-  border-bottom: 1px solid rgba(252, 0, 2, 0.3);
-}
-.expandedPanel .menuItemsContainer .subCategory .cardsRow {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scrollbar-width: none;
-}
-.expandedPanel .menuItemsContainer .subCategory .cardsRow::-webkit-scrollbar {
-  display: none;
+  gap: 30px;
 }
 .expandedPanel.left {
   border-radius: 0 20px 20px 20px;
@@ -256,6 +364,28 @@ header img {
 }
 .expandedPanel.right {
   border-radius: 20px 0 20px 20px;
+}
+
+.subCategory {
+  width: 100%;
+}
+.subCategory .subcategory-title {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  text-align: left;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #fc0002;
+}
+.subCategory .cardsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  width: 100%;
+  padding-bottom: 10px;
 }
 
 footer {

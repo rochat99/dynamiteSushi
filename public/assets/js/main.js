@@ -74,7 +74,47 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleCategory(article.id);
     });
   });
+
+  document.querySelectorAll('#specialsLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      loadSpecial(a.dataset.special);
+    });
+  });
+
+  enableDragScroll(document.getElementById('specialsCarousel'));
+  // removed the bentoLink active line from here
 });
+
+function enableDragScroll(element) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  element.addEventListener('mousedown', (e) => {
+    isDown = true;
+    element.classList.add('dragging');
+    startX = e.pageX - element.offsetLeft;
+    scrollLeft = element.scrollLeft;
+  });
+
+  element.addEventListener('mouseleave', () => {
+    isDown = false;
+    element.classList.remove('dragging');
+  });
+
+  element.addEventListener('mouseup', () => {
+    isDown = false;
+    element.classList.remove('dragging');
+  });
+
+  element.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - element.offsetLeft;
+    const walk = (x - startX) * 1.5; // 1.5 = drag speed multiplier
+    element.scrollLeft = scrollLeft - walk;
+  });
+}
 
 // ── Menu card building ────────────────────────────────────────────────────────
 
@@ -90,6 +130,36 @@ function buildCard(item) {
   const card = document.createElement('div');
   card.classList.add('card');
   card.dataset.id = item.id;
+
+  // TAGS
+  const tags = document.createElement('div');
+  tags.classList.add('tags');
+
+  if (isVal(item.tags) && item.tags === 'spicy') {
+    const tag = document.createElement('div');
+    tag.classList.add('tag', 'spicy');
+    tags.appendChild(tag);
+  }
+
+  if (isVal(item.tags) && item.tags === 'vegan') {
+    const tag = document.createElement('div');
+    tag.classList.add('tag', 'vegan');
+    tags.appendChild(tag);
+  }
+
+  if (item.isOnSale) {
+    const tag = document.createElement('div');
+    tag.classList.add('tag', 'sale');
+    tags.appendChild(tag);
+  }
+
+  if (item.isChefsChoice) {
+    const tag = document.createElement('div');
+    tag.classList.add('tag', 'chefsChoice');
+    tags.appendChild(tag);
+  }
+
+  if (tags.children.length > 0) card.appendChild(tags);
 
   const img = document.createElement('img');
   img.src = `./assets/images/items/${item.id}.jpg`;
@@ -190,7 +260,6 @@ function checkChevronVisibility(card) {
   const wrapper = card.querySelector('.ingredients-wrapper');
   if (!p || !toggle || !wrapper) return;
 
-  // Remove clamp to measure true natural height
   p.style.display = 'block';
   p.style.webkitLineClamp = 'unset';
   p.style.overflow = 'visible';
@@ -201,7 +270,6 @@ function checkChevronVisibility(card) {
   const threeLineHeight = lineHeight * 3;
 
   if (naturalHeight > Math.ceil(threeLineHeight)) {
-    // Exceeds 3 lines — clamp and show chevron
     p.style.display = '-webkit-box';
     p.style.webkitBoxOrient = 'vertical';
     p.style.webkitLineClamp = '3';
@@ -209,53 +277,91 @@ function checkChevronVisibility(card) {
     wrapper.style.overflow = 'hidden';
     toggle.style.display = 'block';
   } else {
-    // Fits — no chevron, no fade
     p.style.display = 'block';
     toggle.style.display = 'none';
+    wrapper.classList.add('no-fade');
   }
+}
+
+// ── Specials carousel ─────────────────────────────────────────────────────────
+
+const specialsData = {};
+
+function loadSpecial(key, isInitial = false) {
+  const carousel = document.getElementById('specialsCarousel');
+  carousel.innerHTML = '';
+
+  const items = specialsData[key];
+  if (!items) return;
+
+  items.forEach(item => {
+    const card = buildCard(item);
+    if (card) carousel.appendChild(card);
+  });
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      carousel.querySelectorAll('.card').forEach(card => checkChevronVisibility(card));
+    });
+  });
+
+  const applyActive = () => {
+    document.querySelectorAll('#specialsLinks a').forEach(a => {
+      a.classList.remove('active');
+      if (a.dataset.special === key) a.classList.add('active');
+    });
+  };
+
+  // On initial load, defer slightly to ensure DOM is fully ready
+  if (isInitial) {
+    setTimeout(applyActive, 0);
+  } else {
+    applyActive();
+  }
+}
+
+// ── Render from JSON ──────────────────────────────────────────────────────────
+
+function toKey(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, '')
+    .replace(/ (.)/g, (_, c) => c.toUpperCase());
 }
 
 function renderMenuFromJSON(data) {
   const categories = data.categories;
+  const saleItems = [];
 
   for (const [categoryName, subcategories] of Object.entries(categories)) {
 
-    // Collect specials separately
     if (categoryName === 'Sales & Specials') {
       for (const [subcategoryName, items] of Object.entries(subcategories)) {
-        const key = subcategoryName
-          .toLowerCase()
-          .replace(/[^a-z0-9 ]/g, '')
-          .replace(/ (.)/g, (_, c) => c.toUpperCase());
-        specialsData[key] = items;
+        specialsData[toKey(subcategoryName)] = items;
       }
-      // Auto-load bento on page load
-      // Done after DOMContentLoaded so we call it after fetch resolves
-      setTimeout(() => loadSpecial('bentoBoxes'), 0);
+      loadSpecial('bentoBoxes', true);
       continue;
     }
 
     for (const [subcategoryName, items] of Object.entries(subcategories)) {
-      const subcategoryKey = subcategoryName
-        .toLowerCase()
-        .replace(/[^a-z0-9 ]/g, '')
-        .replace(/ (.)/g, (_, c) => c.toUpperCase());
+      const subcategoryKey = toKey(subcategoryName);
 
       const container = document.querySelector(
         `.subCategory[data-subcategory="${subcategoryKey}"]`
       );
 
+      // Collect sale items from every category
+      items.forEach(item => {
+        if (item.isOnSale) saleItems.push(item);
+      });
+
       if (!container) continue;
 
-      // Add subcategory name heading if not already there
-      if (!container.querySelector('.subcategory-title')) {
-        const title = document.createElement('h3');
-        title.classList.add('subcategory-title');
-        title.textContent = subcategoryName;
-        container.appendChild(title);
-      }
+      const title = document.createElement('h3');
+      title.classList.add('subcategory-title');
+      title.textContent = subcategoryName;
+      container.appendChild(title);
 
-      // Wrap cards in a horizontal row
       const row = document.createElement('div');
       row.classList.add('cardsRow');
 
@@ -268,54 +374,12 @@ function renderMenuFromJSON(data) {
       container.appendChild(row);
     }
   }
+
+  // Store sale items so the SALES link in specials can load them
+  specialsData['saleSpecial'] = saleItems;
 }
 
 fetch('./assets/data/Dynamite_Sushi_Menu.json')
   .then(res => res.json())
   .then(data => renderMenuFromJSON(data))
   .catch(err => console.error('Failed to load menu JSON:', err));
-
-  // Specials carousel
-const specialsData = {};
-
-function loadSpecial(key) {
-  const carousel = document.getElementById('specialsCarousel');
-  carousel.innerHTML = '';
-
-  const items = specialsData[key];
-  if (!items) return;
-
-  items.forEach(item => {
-    const card = buildCard(item);
-    if (card) carousel.appendChild(card);
-  });
-
-  // Check chevrons after render
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      carousel.querySelectorAll('.card').forEach(card => checkChevronVisibility(card));
-    });
-  });
-
-  // Update active link style
-  document.querySelectorAll('#specialsLinks a').forEach(a => {
-    a.classList.toggle('active', a.dataset.special === key);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Menu category buttons
-  document.querySelectorAll('.mainCategory button').forEach(button => {
-    button.addEventListener('click', () => {
-      const article = button.closest('.mainCategory');
-      toggleCategory(article.id);
-    });
-  });
-
-  // Specials links
-  document.querySelectorAll('#specialsLinks a').forEach(a => {
-    a.addEventListener('click', () => {
-      loadSpecial(a.dataset.special);
-    });
-  });
-});
