@@ -217,11 +217,25 @@ function checkChevronVisibility(card) {
 
 function renderMenuFromJSON(data) {
   const categories = data.categories;
-  const allCards = [];
 
   for (const [categoryName, subcategories] of Object.entries(categories)) {
-    for (const [subcategoryName, items] of Object.entries(subcategories)) {
 
+    // Collect specials separately
+    if (categoryName === 'Sales & Specials') {
+      for (const [subcategoryName, items] of Object.entries(subcategories)) {
+        const key = subcategoryName
+          .toLowerCase()
+          .replace(/[^a-z0-9 ]/g, '')
+          .replace(/ (.)/g, (_, c) => c.toUpperCase());
+        specialsData[key] = items;
+      }
+      // Auto-load bento on page load
+      // Done after DOMContentLoaded so we call it after fetch resolves
+      setTimeout(() => loadSpecial('bentoBoxes'), 0);
+      continue;
+    }
+
+    for (const [subcategoryName, items] of Object.entries(subcategories)) {
       const subcategoryKey = subcategoryName
         .toLowerCase()
         .replace(/[^a-z0-9 ]/g, '')
@@ -233,12 +247,25 @@ function renderMenuFromJSON(data) {
 
       if (!container) continue;
 
+      // Add subcategory name heading if not already there
+      if (!container.querySelector('.subcategory-title')) {
+        const title = document.createElement('h3');
+        title.classList.add('subcategory-title');
+        title.textContent = subcategoryName;
+        container.appendChild(title);
+      }
+
+      // Wrap cards in a horizontal row
+      const row = document.createElement('div');
+      row.classList.add('cardsRow');
+
       items.forEach(item => {
         const card = buildCard(item);
         if (!card) return;
-        container.appendChild(card);
-        allCards.push(card);
+        row.appendChild(card);
       });
+
+      container.appendChild(row);
     }
   }
 }
@@ -247,3 +274,48 @@ fetch('./assets/data/Dynamite_Sushi_Menu.json')
   .then(res => res.json())
   .then(data => renderMenuFromJSON(data))
   .catch(err => console.error('Failed to load menu JSON:', err));
+
+  // Specials carousel
+const specialsData = {};
+
+function loadSpecial(key) {
+  const carousel = document.getElementById('specialsCarousel');
+  carousel.innerHTML = '';
+
+  const items = specialsData[key];
+  if (!items) return;
+
+  items.forEach(item => {
+    const card = buildCard(item);
+    if (card) carousel.appendChild(card);
+  });
+
+  // Check chevrons after render
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      carousel.querySelectorAll('.card').forEach(card => checkChevronVisibility(card));
+    });
+  });
+
+  // Update active link style
+  document.querySelectorAll('#specialsLinks a').forEach(a => {
+    a.classList.toggle('active', a.dataset.special === key);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Menu category buttons
+  document.querySelectorAll('.mainCategory button').forEach(button => {
+    button.addEventListener('click', () => {
+      const article = button.closest('.mainCategory');
+      toggleCategory(article.id);
+    });
+  });
+
+  // Specials links
+  document.querySelectorAll('#specialsLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      loadSpecial(a.dataset.special);
+    });
+  });
+});

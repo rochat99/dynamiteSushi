@@ -101,6 +101,53 @@ header img {
   line-height: 1;
 }
 
+#specialsSection {
+  text-align: center;
+  margin: 40px 0;
+}
+#specialsSection h1 {
+  margin-bottom: 20px;
+}
+#specialsSection #specialsLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+  justify-content: space-around;
+  padding: 0 400px;
+}
+#specialsSection #specialsLinks a {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: normal;
+  color: black;
+  cursor: pointer;
+}
+#specialsSection #specialsLinks a.active {
+  border-bottom: 3px solid black;
+}
+#specialsSection #specialsLinks a:hover {
+  border-bottom: 3px solid black;
+  transition: border 0.2s ease;
+}
+#specialsSection #specialsCarousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 40px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+#specialsSection #specialsCarousel::-webkit-scrollbar {
+  display: none;
+}
+#specialsSection #specialsCarousel .card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
 #menuSection {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -179,6 +226,27 @@ header img {
   flex-wrap: wrap;
   padding: 40px;
   gap: 20px;
+}
+.expandedPanel .menuItemsContainer .subCategory {
+  width: 100%;
+}
+.expandedPanel .menuItemsContainer .subCategory h2, .expandedPanel .menuItemsContainer .subCategory h3 {
+  text-align: left;
+  margin-bottom: 10px;
+  padding: 0 0 6px 0;
+  border-bottom: 1px solid rgba(252, 0, 2, 0.3);
+}
+.expandedPanel .menuItemsContainer .subCategory .cardsRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+.expandedPanel .menuItemsContainer .subCategory .cardsRow::-webkit-scrollbar {
+  display: none;
 }
 .expandedPanel.left {
   border-radius: 0 20px 20px 20px;

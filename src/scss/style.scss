@@ -103,6 +103,55 @@ header {
 }
 
 // SPECIALS SECTION
+#specialsSection {
+  text-align: center;
+  margin: 40px 0;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  #specialsLinks {
+     display: flex;
+     flex-direction: row;
+     align-items: space-around;
+     justify-content: space-around;
+     padding: 0 400px;
+    
+    a {
+      @include inter(16px, 800);
+      cursor: pointer;
+
+      &.active {
+        border-bottom: 3px solid black;
+      }
+
+      &:hover {
+        border-bottom: 3px solid black;
+        transition: border 0.2s ease;
+      }
+    } 
+  }
+
+  #specialsCarousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 40px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    // hide scrollbar visually but keep it functional
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    .card {
+      flex-shrink: 0; // prevent cards from squishing
+      scroll-snap-align: start;
+    }
+  }
+}
 
 
 // MENU SECTION
@@ -187,6 +236,28 @@ header {
     flex-wrap: wrap;
     padding: 40px;
     gap: 20px;
+
+    .subCategory {
+      width: 100%;
+
+      h2, h3 {
+        text-align: left;
+        margin-bottom: 10px;
+        padding: 0 0 6px 0;
+        border-bottom: 1px solid rgba($red, 0.3);
+      }
+
+      .cardsRow {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 15px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+        &::-webkit-scrollbar { display: none; }
+      }
+    }
   }
 
   &.left {border-radius: 0 20px 20px 20px}
