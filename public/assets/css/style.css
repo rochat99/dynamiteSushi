@@ -1,40 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  font-family: "Inter", sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  font-style: normal;
-  color: black;
-}
-
-h2 {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  font-style: normal;
-  color: black;
-}
-
-h3 {
-  font-family: "Inter", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
-}
-
-p {
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
-}
-
 header {
   display: flex;
   width: 100vw;
@@ -45,121 +8,6 @@ header {
 }
 header img {
   height: 40px;
-}
-
-.ingredients-text {
-  padding: 0 8px;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  min-height: 280px;
-  height: 280px;
-  border: black 2px solid;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  border: 2px solid black;
-  box-shadow: 0 0 0 3px white, 0 0 0 5px black, 0 0 0 7px white, 0 0 0 9px black;
-  margin: 5px;
-}
-.card .tags {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 1;
-  width: fit-content;
-}
-.card .tags .tag {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  width: 40px;
-  height: 24px;
-  padding: 0 8px 0 6px;
-  border-radius: 0 12px 12px 0;
-}
-.card .tags .tag .tag-icon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  background-color: white;
-  margin-top: 5px;
-}
-.card .tags .tag.spicy {
-  background-color: #fc0002;
-}
-.card .tags .tag.spicy .tag-icon {
-  -webkit-mask: url("../images/spicy.svg") center/contain no-repeat;
-  mask: url("../images/spicy.svg") center/contain no-repeat;
-}
-.card .tags .tag.vegan {
-  background-color: #28ba65;
-}
-.card .tags .tag.vegan .tag-icon {
-  -webkit-mask: url("../images/vegan.svg") center/contain no-repeat;
-  mask: url("../images/vegan.svg") center/contain no-repeat;
-}
-.card .tags .tag.sale {
-  background-color: #f88d04;
-}
-.card .tags .tag.sale .tag-icon {
-  -webkit-mask: url("../images/sale.svg") center/contain no-repeat;
-  mask: url("../images/sale.svg") center/contain no-repeat;
-}
-.card .tags .tag.chefsChoice {
-  background-color: #0071b0;
-}
-.card .tags .tag.chefsChoice .tag-icon {
-  -webkit-mask: url("../images/chefsChoice.svg") center/contain no-repeat;
-  mask: url("../images/chefsChoice.svg") center/contain no-repeat;
-}
-.card.is-expanded {
-  height: auto;
-  overflow: visible;
-}
-.card div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.card div h3 {
-  padding: 2px;
-}
-.card div .ingredients-wrapper {
-  position: relative;
-  width: 100%;
-}
-.card div .ingredients-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(transparent, white);
-  pointer-events: none;
-}
-.card div .ingredients-wrapper.no-fade::after {
-  display: none;
-}
-.card div button {
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 2;
-  padding: 0;
-  margin-top: 2px;
-  line-height: 1;
 }
 
 #specialsLinks a.active {
@@ -309,6 +157,127 @@ header img {
   background-color: white;
 }
 
+.ingredients-text {
+  padding: 0 8px;
+  margin-bottom: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  min-height: 280px;
+  height: 280px;
+  border: black 2px solid;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid black;
+  box-shadow: 0 0 0 3px white, 0 0 0 5px black, 0 0 0 7px white, 0 0 0 9px black;
+  margin: 5px;
+}
+.card img {
+  width: 85%;
+  aspect-ratio: 1/1;
+  margin: 5px;
+}
+.card .tags {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1;
+  width: fit-content;
+}
+.card .tags .tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 24px;
+  padding: 0 8px 0 6px;
+  border-radius: 0 12px 12px 0;
+}
+.card .tags .tag .tag-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background-color: white;
+  margin-top: 5px;
+}
+.card .tags .tag.spicy {
+  background-color: #fc0002;
+}
+.card .tags .tag.spicy .tag-icon {
+  -webkit-mask: url("../images/spicy.svg") center/contain no-repeat;
+  mask: url("../images/spicy.svg") center/contain no-repeat;
+}
+.card .tags .tag.vegan {
+  background-color: #28ba65;
+}
+.card .tags .tag.vegan .tag-icon {
+  -webkit-mask: url("../images/vegan.svg") center/contain no-repeat;
+  mask: url("../images/vegan.svg") center/contain no-repeat;
+}
+.card .tags .tag.sale {
+  background-color: #f88d04;
+}
+.card .tags .tag.sale .tag-icon {
+  -webkit-mask: url("../images/sale.svg") center/contain no-repeat;
+  mask: url("../images/sale.svg") center/contain no-repeat;
+}
+.card .tags .tag.chefsChoice {
+  background-color: #0071b0;
+}
+.card .tags .tag.chefsChoice .tag-icon {
+  -webkit-mask: url("../images/chefsChoice.svg") center/contain no-repeat;
+  mask: url("../images/chefsChoice.svg") center/contain no-repeat;
+}
+.card.is-expanded {
+  height: auto;
+  overflow: visible;
+}
+.card div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.card div h3 {
+  padding: 2px;
+}
+.card div .ingredients-wrapper {
+  position: relative;
+  width: 100%;
+}
+.card div .ingredients-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(transparent, white);
+  pointer-events: none;
+}
+.card div .ingredients-wrapper.no-fade::after {
+  display: none;
+}
+.card div button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  margin-top: 2px;
+  line-height: 1;
+}
+
 #menuSection {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -431,30 +400,6 @@ header img {
   padding-bottom: 10px;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  background-color: #0071b0;
-  justify-content: center;
-  align-items: center;
-}
-footer a {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  font-style: regular;
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px solid white;
-  padding-top: 8px;
-}
-footer a:hover {
-  border-bottom: 1px solid #0071b0;
-  color: #f88d04;
-  transition: color 0.6s ease, border-bottom 0.2s ease;
-}
-
 @media (max-width: 768px) {
   #specialsSection #specialsLinks {
     padding: 0 20px;
@@ -536,6 +481,66 @@ footer a:hover {
   body {
     overflow-x: hidden;
   }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  background-color: #0071b0;
+  justify-content: center;
+  align-items: center;
+}
+footer a {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: regular;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  padding-top: 8px;
+}
+footer a:hover {
+  border-bottom: 1px solid #0071b0;
+  color: #f88d04;
+  transition: color 0.6s ease, border-bottom 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  font-style: normal;
+  color: black;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: normal;
+  color: black;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

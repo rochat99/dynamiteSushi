@@ -1,0 +1,56 @@
+#specialsLinks a.active {
+  border-bottom: 3px solid black;
+}
+
+#specialsSection {
+  text-align: center;
+  margin: 40px 0;
+
+  h1 { margin-bottom: 20px; }
+
+  #specialsLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 400px;
+
+    a {
+      @include inter(16px, 800);
+      cursor: pointer;
+      text-decoration: none;
+
+      // &.active { border-bottom: 3px solid black; }
+
+      &:hover {
+        border-bottom: 3px solid black;
+        transition: border 0.2s ease;
+      }
+    }
+  }
+
+  #specialsCarousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 40px;
+    scroll-padding-left: 40px;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+
+    &::-webkit-scrollbar { display: none; }
+
+    &.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
+    .card {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+  }
+}

@@ -227,27 +227,27 @@ function buildCard(item) {
     toggle.style.display = 'none';
     toggle.innerHTML = '<i class="bi bi-chevron-compact-down"></i>';
 
-    toggle.addEventListener('click', () => {
-      const isExpanded = card.classList.toggle('is-expanded');
-      const icon = toggle.querySelector('i');
-      icon.classList.toggle('bi-chevron-compact-down', !isExpanded);
-      icon.classList.toggle('bi-chevron-compact-up', isExpanded);
+toggle.addEventListener('click', () => {
+  const isExpanded = card.classList.toggle('is-expanded');
+  const icon = toggle.querySelector('i');
+  icon.classList.toggle('bi-chevron-compact-down', !isExpanded);
+  icon.classList.toggle('bi-chevron-compact-up', isExpanded);
 
-      if (isExpanded) {
-        p.style.display = 'block';
-        p.style.webkitLineClamp = 'unset';
-        p.style.overflow = 'visible';
-        wrapper.style.overflow = 'visible';
-        wrapper.classList.add('no-fade');
-      } else {
-        p.style.display = '-webkit-box';
-        p.style.webkitBoxOrient = 'vertical';
-        p.style.webkitLineClamp = '3';
-        p.style.overflow = 'hidden';
-        wrapper.style.overflow = 'hidden';
-        wrapper.classList.remove('no-fade');
-      }
-    });
+  if (isExpanded) {
+    p.style.display = 'block';
+    p.style.webkitLineClamp = 'unset';
+    p.style.overflow = 'visible';
+    wrapper.style.overflow = 'visible';
+    wrapper.classList.add('no-fade');
+  } else {
+    p.style.display = '-webkit-box';
+    p.style.webkitBoxOrient = 'vertical';
+    p.style.webkitLineClamp = '2'; // ← changed from 3 to 2
+    p.style.overflow = 'hidden';
+    wrapper.style.overflow = 'hidden';
+    wrapper.classList.remove('no-fade');
+  }
+});
 
     content.appendChild(toggle);
   }
@@ -269,12 +269,12 @@ function checkChevronVisibility(card) {
 
   const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
   const naturalHeight = p.scrollHeight;
-  const threeLineHeight = lineHeight * 3;
+  const twoLineHeight = lineHeight * 2; // ← changed from 3 to 2
 
-  if (naturalHeight > Math.ceil(threeLineHeight)) {
+  if (naturalHeight > Math.ceil(twoLineHeight)) {
     p.style.display = '-webkit-box';
     p.style.webkitBoxOrient = 'vertical';
-    p.style.webkitLineClamp = '3';
+    p.style.webkitLineClamp = '2'; // ← changed from 3 to 2
     p.style.overflow = 'hidden';
     wrapper.style.overflow = 'hidden';
     toggle.style.display = 'block';

@@ -1,0 +1,21 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    background-color: $blue;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        @include inter(15px, 400, regular, white);
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        padding-top: 8px;
+
+        &:hover {
+            border-bottom: 1px solid $blue;
+            color: $orange;
+            transition: color 0.6s ease, border-bottom 0.2s ease;
+        }
+    }
+}
