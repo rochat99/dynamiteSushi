@@ -68,6 +68,7 @@
     opacity: 0.4;
     cursor: not-allowed;
     border-color: grey;
+    @include triple-border(grey)
 
     button {
       cursor: not-allowed;
