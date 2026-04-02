@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.mainCategory button').forEach(button => {
     button.addEventListener('click', () => {
       const article = button.closest('.mainCategory');
+      if (article.classList.contains('greyed-out')) return;
       toggleCategory(article.id);
     });
   });
@@ -82,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   enableDragScroll(document.getElementById('specialsCarousel'));
-  // removed the bentoLink active line from here
 });
 
 function enableDragScroll(element) {
@@ -111,7 +111,7 @@ function enableDragScroll(element) {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - element.offsetLeft;
-    const walk = (x - startX) * 1.5; // 1.5 = drag speed multiplier
+    const walk = (x - startX) * 1.5;
     element.scrollLeft = scrollLeft - walk;
   });
 }
@@ -126,37 +126,36 @@ function formatPrice(price) {
   return `$${parseFloat(price).toFixed(2)}`;
 }
 
+function createTag(type) {
+  const tag = document.createElement('div');
+  tag.classList.add('tag', type);
+
+  const icon = document.createElement('div');
+  icon.classList.add('tag-icon');
+  tag.appendChild(icon);
+
+  return tag;
+}
+
 function buildCard(item) {
   const card = document.createElement('div');
   card.classList.add('card');
   card.dataset.id = item.id;
 
-  // TAGS
   const tags = document.createElement('div');
   tags.classList.add('tags');
 
   if (isVal(item.tags) && item.tags === 'spicy') {
-    const tag = document.createElement('div');
-    tag.classList.add('tag', 'spicy');
-    tags.appendChild(tag);
+    tags.appendChild(createTag('spicy'));
   }
-
   if (isVal(item.tags) && item.tags === 'vegan') {
-    const tag = document.createElement('div');
-    tag.classList.add('tag', 'vegan');
-    tags.appendChild(tag);
+    tags.appendChild(createTag('vegan'));
   }
-
   if (item.isOnSale) {
-    const tag = document.createElement('div');
-    tag.classList.add('tag', 'sale');
-    tags.appendChild(tag);
+    tags.appendChild(createTag('sale'));
   }
-
   if (item.isChefsChoice) {
-    const tag = document.createElement('div');
-    tag.classList.add('tag', 'chefsChoice');
-    tags.appendChild(tag);
+    tags.appendChild(createTag('chefsChoice'));
   }
 
   if (tags.children.length > 0) card.appendChild(tags);
@@ -291,6 +290,19 @@ function loadSpecial(key, isInitial = false) {
   const carousel = document.getElementById('specialsCarousel');
   carousel.innerHTML = '';
 
+  const applyActive = () => {
+    document.querySelectorAll('#specialsLinks a').forEach(a => {
+      a.classList.remove('active');
+      if (a.dataset.special === key) a.classList.add('active');
+    });
+  };
+
+  if (isInitial) {
+    setTimeout(applyActive, 100);
+  } else {
+    applyActive();
+  }
+
   const items = specialsData[key];
   if (!items) return;
 
@@ -304,20 +316,60 @@ function loadSpecial(key, isInitial = false) {
       carousel.querySelectorAll('.card').forEach(card => checkChevronVisibility(card));
     });
   });
+}
 
-  const applyActive = () => {
-    document.querySelectorAll('#specialsLinks a').forEach(a => {
-      a.classList.remove('active');
-      if (a.dataset.special === key) a.classList.add('active');
+// ── Filters ───────────────────────────────────────────────────────────────────
+
+function applyFilters() {
+  const activeFilters = Array.from(
+    document.querySelectorAll('#filterArea .circle.active')
+  ).map(el => el.id);
+
+  // Apply to all cards everywhere in the menu panels
+  document.querySelectorAll('.expandedPanel .card, #specialsCarousel .card').forEach(card => {
+    if (activeFilters.length === 0) {
+      card.style.display = '';
+      return;
+    }
+
+    const hasMatch = activeFilters.some(filter => {
+      return card.querySelector(`.tag.${filter}`) !== null;
     });
-  };
 
-  // On initial load, defer slightly to ensure DOM is fully ready
-  if (isInitial) {
-    setTimeout(applyActive, 0);
-  } else {
-    applyActive();
-  }
+    card.style.display = hasMatch ? '' : 'none';
+  });
+
+  // Grey out categories that have no visible cards after filtering
+  document.querySelectorAll('.mainCategory').forEach(article => {
+    if (activeFilters.length === 0) {
+      article.classList.remove('greyed-out');
+      return;
+    }
+
+    const panelId = categoryPanels[article.id];
+    if (!panelId) return;
+
+    const panel = document.getElementById(panelId);
+    const hasMatch = activeFilters.some(filter => {
+      return panel.querySelector(`.tag.${filter}`) !== null;
+    });
+
+    if (hasMatch) {
+      article.classList.remove('greyed-out');
+    } else {
+      if (activeCategory === article.id) closeActive();
+      article.classList.add('greyed-out');
+    }
+  });
+}
+
+function setupFilterListeners() {
+  document.querySelectorAll('#filterArea .circle').forEach(circle => {
+    circle.addEventListener('click', () => {
+      circle.classList.toggle('active');
+      applyFilters();
+    });
+  });
 }
 
 // ── Render from JSON ──────────────────────────────────────────────────────────
@@ -350,16 +402,15 @@ function renderMenuFromJSON(data) {
         `.subCategory[data-subcategory="${subcategoryKey}"]`
       );
 
-      // Collect sale items from every category
       items.forEach(item => {
         if (item.isOnSale) saleItems.push(item);
       });
 
       if (!container) continue;
 
-      const title = document.createElement('h3');
+      const title = document.createElement('h2');
       title.classList.add('subcategory-title');
-      title.textContent = subcategoryName;
+      title.textContent = subcategoryName.toUpperCase();
       container.appendChild(title);
 
       const row = document.createElement('div');
@@ -375,11 +426,13 @@ function renderMenuFromJSON(data) {
     }
   }
 
-  // Store sale items so the SALES link in specials can load them
   specialsData['saleSpecial'] = saleItems;
 }
 
 fetch('./assets/data/Dynamite_Sushi_Menu.json')
   .then(res => res.json())
-  .then(data => renderMenuFromJSON(data))
+  .then(data => {
+    renderMenuFromJSON(data);
+    setupFilterListeners();
+  })
   .catch(err => console.error('Failed to load menu JSON:', err));

@@ -11,3 +11,12 @@ $purple: #824bd0;
     font-style: $style;
     color: $color;
 };
+
+@mixin triple-border($color) {
+  border: 2px solid $color;
+  box-shadow: 
+    0 0 0 3px white,
+    0 0 0 5px $color,
+    0 0 0 7px white,
+    0 0 0 9px $color;
+};
