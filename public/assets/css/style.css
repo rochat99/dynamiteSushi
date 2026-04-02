@@ -97,29 +97,29 @@ header img {
   background-color: #fc0002;
 }
 .card .tags .tag.spicy .tag-icon {
-  -webkit-mask: url("/assets/images/spicy.svg") center/contain no-repeat;
-  mask: url("/assets/images/spicy.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/spicy.svg") center/contain no-repeat;
+  mask: url("../images/spicy.svg") center/contain no-repeat;
 }
 .card .tags .tag.vegan {
   background-color: #28ba65;
 }
 .card .tags .tag.vegan .tag-icon {
-  -webkit-mask: url("/assets/images/vegan.svg") center/contain no-repeat;
-  mask: url("/assets/images/vegan.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/vegan.svg") center/contain no-repeat;
+  mask: url("../images/vegan.svg") center/contain no-repeat;
 }
 .card .tags .tag.sale {
   background-color: #f88d04;
 }
 .card .tags .tag.sale .tag-icon {
-  -webkit-mask: url("/assets/images/sale.svg") center/contain no-repeat;
-  mask: url("/assets/images/sale.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/sale.svg") center/contain no-repeat;
+  mask: url("../images/sale.svg") center/contain no-repeat;
 }
 .card .tags .tag.chefsChoice {
   background-color: #0071b0;
 }
 .card .tags .tag.chefsChoice .tag-icon {
-  -webkit-mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
-  mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/chefsChoice.svg") center/contain no-repeat;
+  mask: url("../images/chefsChoice.svg") center/contain no-repeat;
 }
 .card.is-expanded {
   height: auto;
@@ -245,8 +245,8 @@ header img {
 }
 #filterArea #spicy .icon {
   background-color: #fc0002;
-  -webkit-mask: url("/assets/images/spicy.svg") center/contain no-repeat;
-  mask: url("/assets/images/spicy.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/spicy.svg") center/contain no-repeat;
+  mask: url("../images/spicy.svg") center/contain no-repeat;
 }
 #filterArea #spicy:hover {
   background-color: rgba(252, 0, 2, 0.15);
@@ -262,8 +262,8 @@ header img {
 }
 #filterArea #vegan .icon {
   background-color: #28ba65;
-  -webkit-mask: url("/assets/images/vegan.svg") center/contain no-repeat;
-  mask: url("/assets/images/vegan.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/vegan.svg") center/contain no-repeat;
+  mask: url("../images/vegan.svg") center/contain no-repeat;
 }
 #filterArea #vegan:hover {
   background-color: rgba(40, 186, 101, 0.15);
@@ -279,8 +279,8 @@ header img {
 }
 #filterArea #sale .icon {
   background-color: #f88d04;
-  -webkit-mask: url("/assets/images/sale.svg") center/contain no-repeat;
-  mask: url("/assets/images/sale.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/sale.svg") center/contain no-repeat;
+  mask: url("../images/sale.svg") center/contain no-repeat;
 }
 #filterArea #sale:hover {
   background-color: rgba(248, 141, 4, 0.15);
@@ -296,8 +296,8 @@ header img {
 }
 #filterArea #chefsChoice .icon {
   background-color: #0071b0;
-  -webkit-mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
-  mask: url("/assets/images/chefsChoice.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/chefsChoice.svg") center/contain no-repeat;
+  mask: url("../images/chefsChoice.svg") center/contain no-repeat;
 }
 #filterArea #chefsChoice:hover {
   background-color: rgba(0, 113, 176, 0.15);
@@ -338,7 +338,7 @@ header img {
   box-shadow: 0 0 0 3px white, 0 0 0 5px #fc0002, 0 0 0 7px white, 0 0 0 9px #fc0002;
   min-height: 100px;
   margin: 5px;
-  transition: border-radius 0.1s ease, background-color 0.4s ease, border 0.3s ease;
+  transition: border-radius 0.3s ease, background-color 0.4s ease, border 0.3s ease;
   align-self: start;
 }
 .mainCategory button {
@@ -361,6 +361,8 @@ header img {
   border-bottom: none;
   margin-bottom: -20px;
   padding-bottom: 25px;
+  box-shadow: none;
+  border: 2px solid #fc0002;
 }
 .mainCategory.is-expanded button {
   color: white;
@@ -451,6 +453,89 @@ footer a:hover {
   border-bottom: 1px solid #0071b0;
   color: #f88d04;
   transition: color 0.6s ease, border-bottom 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  #specialsSection #specialsLinks {
+    padding: 0 20px;
+  }
+  #specialsSection #specialsCarousel {
+    padding: 20px 16px;
+  }
+  #specialsSection #specialsCarousel .card {
+    width: 120px;
+    min-height: 220px;
+    height: 220px;
+    margin-right: 5px;
+  }
+  #menuSection {
+    grid-template-columns: 1fr;
+    margin: 10px 16px;
+    gap: 10px;
+    width: 90vw;
+  }
+  #headerFilterArea {
+    grid-column: 1;
+  }
+  .expandedPanel {
+    grid-column: 1 !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .expandedPanel.left, .expandedPanel.middle, .expandedPanel.right {
+    border-radius: 0 0 20px 20px;
+  }
+  .expandedPanel .menuItemsContainer {
+    padding: 20px 12px;
+  }
+  .card {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 220px;
+    height: 220px;
+    margin-bottom: 3px;
+  }
+  .card img {
+    width: 70%;
+  }
+  .card div h2 {
+    font-size: 12px;
+  }
+  .card div h3 {
+    font-size: 10px;
+  }
+  .card div p {
+    font-size: 9px;
+  }
+  .subCategory .cardsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    row-gap: 20px;
+    padding: 0 4px;
+  }
+  .mainCategory {
+    margin: 8px 0;
+  }
+  .mainCategory button {
+    height: 70px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .mainCategory.is-expanded {
+    margin-bottom: -10px;
+    padding-bottom: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+    border: 2px solid #fc0002;
+  }
+  .subCategory .subcategory-title {
+    text-align: center;
+  }
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

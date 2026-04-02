@@ -15,7 +15,10 @@ let activeCategory = null;
 function placePanel(panel, article) {
   const grid = document.getElementById('menuSection');
   const allArticles = Array.from(grid.querySelectorAll('.mainCategory'));
-  const columns = 3;
+
+  // Detect columns from computed style instead of hardcoding 3
+  const gridStyle = window.getComputedStyle(grid);
+  const columns = gridStyle.gridTemplateColumns.split(' ').length;
 
   const articleIndex = allArticles.indexOf(article);
   const buttonRow = Math.floor(articleIndex / columns);

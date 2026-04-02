@@ -78,32 +78,32 @@ header {
     &.spicy {
       background-color: $red;
       .tag-icon {
-        -webkit-mask: url('/assets/images/spicy.svg') center / contain no-repeat;
-        mask: url('/assets/images/spicy.svg') center / contain no-repeat;
+        -webkit-mask: url('../images/spicy.svg') center / contain no-repeat;
+        mask: url('../images/spicy.svg') center / contain no-repeat;
       }
     }
 
     &.vegan {
       background-color: $green;
       .tag-icon {
-        -webkit-mask: url('/assets/images/vegan.svg') center / contain no-repeat;
-        mask: url('/assets/images/vegan.svg') center / contain no-repeat;
+        -webkit-mask: url('../images/vegan.svg') center / contain no-repeat;
+        mask: url('../images/vegan.svg') center / contain no-repeat;
       }
     }
 
     &.sale {
       background-color: $orange;
       .tag-icon {
-        -webkit-mask: url('/assets/images/sale.svg') center / contain no-repeat;
-        mask: url('/assets/images/sale.svg') center / contain no-repeat;
+        -webkit-mask: url('../images/sale.svg') center / contain no-repeat;
+        mask: url('../images/sale.svg') center / contain no-repeat;
       }
     }
 
     &.chefsChoice {
       background-color: $blue;
       .tag-icon {
-        -webkit-mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
-        mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
+        -webkit-mask: url('../images/chefsChoice.svg') center / contain no-repeat;
+        mask: url('../images/chefsChoice.svg') center / contain no-repeat;
       }
     }
   }
@@ -250,8 +250,8 @@ header {
 
     .icon {
       background-color: $red;
-      -webkit-mask: url('/assets/images/spicy.svg') center / contain no-repeat;
-      mask: url('/assets/images/spicy.svg') center / contain no-repeat;
+      -webkit-mask: url('../images/spicy.svg') center / contain no-repeat;
+      mask: url('../images/spicy.svg') center / contain no-repeat;
     }
 
     &:hover { background-color: rgba($red, 0.15); }
@@ -266,8 +266,8 @@ header {
 
     .icon {
       background-color: $green;
-      -webkit-mask: url('/assets/images/vegan.svg') center / contain no-repeat;
-      mask: url('/assets/images/vegan.svg') center / contain no-repeat;
+      -webkit-mask: url('../images/vegan.svg') center / contain no-repeat;
+      mask: url('../images/vegan.svg') center / contain no-repeat;
     }
 
     &:hover { background-color: rgba($green, 0.15); }
@@ -282,8 +282,8 @@ header {
 
     .icon {
       background-color: $orange;
-      -webkit-mask: url('/assets/images/sale.svg') center / contain no-repeat;
-      mask: url('/assets/images/sale.svg') center / contain no-repeat;
+      -webkit-mask: url('../images/sale.svg') center / contain no-repeat;
+      mask: url('../images/sale.svg') center / contain no-repeat;
     }
 
     &:hover { background-color: rgba($orange, 0.15); }
@@ -298,8 +298,8 @@ header {
 
     .icon {
       background-color: $blue;
-      -webkit-mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
-      mask: url('/assets/images/chefsChoice.svg') center / contain no-repeat;
+      -webkit-mask: url('../images/chefsChoice.svg') center / contain no-repeat;
+      mask: url('../images/chefsChoice.svg') center / contain no-repeat;
     }
 
     &:hover { background-color: rgba($blue, 0.15); }
@@ -341,7 +341,7 @@ header {
   @include triple-border($red);
   min-height: 100px;
   margin: 5px;
-  transition: border-radius 0.1s ease, background-color 0.4s ease, border 0.3s ease;
+  transition: border-radius 0.3s ease, background-color 0.4s ease, border 0.3s ease;
   align-self: start;
 
   button {
@@ -361,6 +361,8 @@ header {
     border-bottom: none;
     margin-bottom: -20px;
     padding-bottom: 25px;
+    box-shadow: none;
+    border: 2px solid $red;
 
     button { color: white; }
 
@@ -457,4 +459,113 @@ footer {
             transition: color 0.6s ease, border-bottom 0.2s ease;
         }
     }
+}
+
+@media (max-width: 768px) {
+
+  // SPECIALS
+  #specialsSection {
+    #specialsLinks {
+      padding: 0 20px;
+    }
+
+    #specialsCarousel {
+      padding: 20px 16px;
+
+      .card {
+        width: 120px;
+        min-height: 220px;
+        height: 220px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // MENU SECTION
+  #menuSection {
+    grid-template-columns: 1fr;
+    margin: 10px 16px;
+    gap: 10px;
+    // overflow-x: hidden;
+    width: 90vw;
+  }
+
+  #headerFilterArea {
+    grid-column: 1;
+  }
+
+  .expandedPanel {
+    grid-column: 1 !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &.left, &.middle, &.right {
+      border-radius: 0 0 20px 20px;
+    }
+
+    .menuItemsContainer {
+      padding: 20px 12px;
+    }
+  }
+
+  // SCALE DOWN CARDS
+  .card {
+    width: 90%;        
+    margin: 0 auto;  
+    min-height: 220px;
+    height: 220px;
+    margin-bottom: 3px;
+
+    img {
+      width: 70%;
+    }
+
+    div {
+      h2 { font-size: 12px; }
+      h3 { font-size: 10px; }
+      p  { font-size: 9px; }
+    }
+  }
+
+  // 2 cards per row with breathing room
+  .subCategory {
+    .cardsRow {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      row-gap: 20px;
+      padding: 0 4px;
+    }
+  }
+
+  // CATEGORY BUTTONS
+  .mainCategory {
+    margin: 8px 0;
+
+    button {
+      height: 70px;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    &.is-expanded {
+      margin-bottom: -10px;
+      padding-bottom: 15px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: none;
+      border: 2px solid $red;
+    }
+  }
+
+  // SUBCATEGORY TITLE
+  .subCategory {
+    .subcategory-title {
+      text-align: center;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }
