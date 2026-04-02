@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "lite-server --baseDir=\"public\"",
-    "watch": "sass --watch src/scss:public/assets/css",
+    "dev": "lite-server --baseDir=\".\"",
+    "watch": "sass --watch src/scss:assets/css",
     "start": "concurrently \"npm run watch\" \"npm run dev\""
   },
   "keywords": [],
