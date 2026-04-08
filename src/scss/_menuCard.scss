@@ -1,132 +1,149 @@
-.ingredients-text {
-  padding: 0 8px;
-  margin-bottom: 5px;
-}
-
 .card {
   display: flex;
   flex-direction: column;
   width: 150px;
-  min-height: 280px;
-  height: 280px;
-  border: black 2px solid;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
+  min-height: 300px;
+  border: 1.5px solid $warm-border;
+  border-radius: 14px;
   overflow: hidden;
   position: relative;
-  @include triple-border(black);
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
   margin: 5px;
+  transition: box-shadow 0.2s ease;
+  align-self: start;
+  text-align: left;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
 
   img {
-    width: 85%;
+    width: 100%;
     aspect-ratio: 1/1;
-    margin: 5px;
+    object-fit: cover;
+    display: block;
   }
 
-.tags {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 1;
-  width: fit-content;
-
-  .tag {
+  .img-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: #e8e3dc;
     display: flex;
     align-items: center;
-    gap: 6px;
-    width: 40px;
-    height: 24px;
-    padding: 0 8px 0 6px;
-    border-radius: 0 12px 12px 0;
+    justify-content: center;
 
-    .tag-icon {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-      background-color: white;
-      margin-top: 5px;
-    }
-
-    // background colour on the TAG, mask only on the ICON
-    &.spicy {
-      background-color: $red;
-      .tag-icon {
-        -webkit-mask: url('../images/spicy.svg') center / contain no-repeat;
-        mask: url('../images/spicy.svg') center / contain no-repeat;
-      }
-    }
-
-    &.vegan {
-      background-color: $green;
-      .tag-icon {
-        -webkit-mask: url('../images/vegan.svg') center / contain no-repeat;
-        mask: url('../images/vegan.svg') center / contain no-repeat;
-      }
-    }
-
-    &.sale {
-      background-color: $orange;
-      .tag-icon {
-        -webkit-mask: url('../images/sale.svg') center / contain no-repeat;
-        mask: url('../images/sale.svg') center / contain no-repeat;
-      }
-    }
-
-    &.chefsChoice {
-      background-color: $blue;
-      .tag-icon {
-        -webkit-mask: url('../images/chefsChoice.svg') center / contain no-repeat;
-        mask: url('../images/chefsChoice.svg') center / contain no-repeat;
-      }
+    img {
+      width: 50%;
+      aspect-ratio: auto;
+      opacity: 0.3;
     }
   }
-}
 
-  &.is-expanded {
-    height: auto;
-    overflow: visible;
-  }
-
-  div {
+  .tags {
+    position: absolute;
+    top: 8px;
+    left: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    // padding: 0 8px;
+    gap: 4px;
+    z-index: 2;
 
-    h3 { padding: 2px; }
+    .tag {
+      display: flex;
+      align-items: center;
+      width: 28px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 0 12px 12px 0;
 
-    .ingredients-wrapper {
-      position: relative;
-      width: 100%;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 30px;
-        background: linear-gradient(transparent, white);
-        pointer-events: none;
+      .tag-icon {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        background-color: white;
+        margin-top: 5px;
       }
 
-      &.no-fade::after { display: none; }
-    }
+      &.spicy {
+        background-color: $red;
+        .tag-icon {
+          -webkit-mask: url('../images/spicy.svg') center / contain no-repeat;
+          mask: url('../images/spicy.svg') center / contain no-repeat;
+        }
+      }
 
-    button {
-      background-color: transparent;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 2;
-      padding: 0;
-      margin-top: 2px;
-      line-height: 1;
+      &.vegan {
+        background-color: $green;
+        .tag-icon {
+          -webkit-mask: url('../images/vegan.svg') center / contain no-repeat;
+          mask: url('../images/vegan.svg') center / contain no-repeat;
+        }
+      }
+
+      &.sale {
+        background-color: $orange;
+        .tag-icon {
+          -webkit-mask: url('../images/sale.svg') center / contain no-repeat;
+          mask: url('../images/sale.svg') center / contain no-repeat;
+        }
+      }
+
+      &.chefsChoice {
+        background-color: $blue;
+        .tag-icon {
+          -webkit-mask: url('../images/chefsChoice.svg') center / contain no-repeat;
+          mask: url('../images/chefsChoice.svg') center / contain no-repeat;
+        }
+      }
     }
+  }
+
+  .card-content {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    text-align: left;
+
+    h2, h3, p { padding: 2px 0; }
+  }
+
+  .card-price {
+    color: $red;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 0;
+  }
+
+  .card-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px 0;
+    color: #999;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+
+    &:hover { color: #333; }
+  }
+
+  .ingredients-text {
+    display: none;
+    font-size: 10px;
+    color: #666;
+    padding: 4px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  &.is-expanded {
+    .ingredients-text { display: block; }
   }
 }

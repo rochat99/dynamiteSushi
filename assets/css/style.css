@@ -25,7 +25,7 @@ header img {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 0 400px;
+  padding: 0 30%;
 }
 #specialsSection #specialsLinks a {
   font-family: "Inter", sans-serif;
@@ -67,139 +67,165 @@ header img {
 
 #filterArea ul {
   display: flex;
-  gap: 30px;
+  gap: 50%;
   list-style: none;
   justify-content: center;
   padding: 12px 0;
 }
-#filterArea .circle {
+#filterArea li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+#filterArea li .filter-label {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  color: black;
+  color: #666;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+#filterArea .icon-circle {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   background-color: white;
   transition: background-color 0.2s ease;
 }
-#filterArea .circle .icon {
+#filterArea .icon-circle .icon {
   width: 24px;
   height: 24px;
   transition: background-color 0.2s ease;
 }
-#filterArea #spicy {
+#filterArea #spicy .icon-circle {
   border: 2px solid #fc0002;
+}
+#filterArea #spicy .icon-circle:hover {
+  background-color: rgba(252, 0, 2, 0.15);
 }
 #filterArea #spicy .icon {
   background-color: #fc0002;
   -webkit-mask: url("../images/spicy.svg") center/contain no-repeat;
   mask: url("../images/spicy.svg") center/contain no-repeat;
 }
-#filterArea #spicy:hover {
-  background-color: rgba(252, 0, 2, 0.15);
-}
-#filterArea #spicy.active {
+#filterArea #spicy.active .icon-circle {
   background-color: #fc0002;
 }
-#filterArea #spicy.active .icon {
+#filterArea #spicy.active .icon-circle .icon {
   background-color: white;
 }
-#filterArea #vegan {
+#filterArea #vegan .icon-circle {
   border: 2px solid #28ba65;
+}
+#filterArea #vegan .icon-circle:hover {
+  background-color: rgba(40, 186, 101, 0.15);
 }
 #filterArea #vegan .icon {
   background-color: #28ba65;
   -webkit-mask: url("../images/vegan.svg") center/contain no-repeat;
   mask: url("../images/vegan.svg") center/contain no-repeat;
 }
-#filterArea #vegan:hover {
-  background-color: rgba(40, 186, 101, 0.15);
-}
-#filterArea #vegan.active {
+#filterArea #vegan.active .icon-circle {
   background-color: #28ba65;
 }
-#filterArea #vegan.active .icon {
+#filterArea #vegan.active .icon-circle .icon {
   background-color: white;
 }
-#filterArea #sale {
+#filterArea #sale .icon-circle {
   border: 2px solid #f88d04;
+}
+#filterArea #sale .icon-circle:hover {
+  background-color: rgba(248, 141, 4, 0.15);
 }
 #filterArea #sale .icon {
   background-color: #f88d04;
   -webkit-mask: url("../images/sale.svg") center/contain no-repeat;
   mask: url("../images/sale.svg") center/contain no-repeat;
 }
-#filterArea #sale:hover {
-  background-color: rgba(248, 141, 4, 0.15);
-}
-#filterArea #sale.active {
+#filterArea #sale.active .icon-circle {
   background-color: #f88d04;
 }
-#filterArea #sale.active .icon {
+#filterArea #sale.active .icon-circle .icon {
   background-color: white;
 }
-#filterArea #chefsChoice {
+#filterArea #chefsChoice .icon-circle {
   border: 2px solid #0071b0;
+}
+#filterArea #chefsChoice .icon-circle:hover {
+  background-color: rgba(0, 113, 176, 0.15);
 }
 #filterArea #chefsChoice .icon {
   background-color: #0071b0;
   -webkit-mask: url("../images/chefsChoice.svg") center/contain no-repeat;
   mask: url("../images/chefsChoice.svg") center/contain no-repeat;
 }
-#filterArea #chefsChoice:hover {
-  background-color: rgba(0, 113, 176, 0.15);
-}
-#filterArea #chefsChoice.active {
+#filterArea #chefsChoice.active .icon-circle {
   background-color: #0071b0;
 }
-#filterArea #chefsChoice.active .icon {
+#filterArea #chefsChoice.active .icon-circle .icon {
   background-color: white;
-}
-
-.ingredients-text {
-  padding: 0 8px;
-  margin-bottom: 5px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   width: 150px;
-  min-height: 280px;
-  height: 280px;
-  border: black 2px solid;
-  align-items: center;
-  text-align: center;
-  border-radius: 10px;
+  min-height: 300px;
+  border: 1.5px solid #e8e0d4;
+  border-radius: 14px;
   overflow: hidden;
   position: relative;
-  border: 2px solid black;
-  box-shadow: 0 0 0 3px white, 0 0 0 5px black, 0 0 0 7px white, 0 0 0 9px black;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
   margin: 5px;
+  transition: box-shadow 0.2s ease;
+  align-self: start;
+  text-align: left;
+}
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 .card img {
-  width: 85%;
+  width: 100%;
   aspect-ratio: 1/1;
-  margin: 5px;
+  object-fit: cover;
+  display: block;
+}
+.card .img-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #e8e3dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .img-placeholder img {
+  width: 50%;
+  aspect-ratio: auto;
+  opacity: 0.3;
 }
 .card .tags {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  z-index: 1;
-  width: fit-content;
+  z-index: 2;
 }
 .card .tags .tag {
   display: flex;
   align-items: center;
-  gap: 6px;
-  width: 40px;
+  width: 28px;
   height: 24px;
-  padding: 0 8px 0 6px;
+  padding: 0 6px;
   border-radius: 0 12px 12px 0;
 }
 .card .tags .tag .tag-icon {
@@ -237,45 +263,50 @@ header img {
   -webkit-mask: url("../images/chefsChoice.svg") center/contain no-repeat;
   mask: url("../images/chefsChoice.svg") center/contain no-repeat;
 }
-.card.is-expanded {
-  height: auto;
-  overflow: visible;
-}
-.card div {
+.card .card-content {
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  text-align: left;
 }
-.card div h3 {
-  padding: 2px;
+.card .card-content h2, .card .card-content h3, .card .card-content p {
+  padding: 2px 0;
 }
-.card div .ingredients-wrapper {
-  position: relative;
-  width: 100%;
+.card .card-price {
+  color: #fc0002;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 2px 0;
 }
-.card div .ingredients-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(transparent, white);
-  pointer-events: none;
-}
-.card div .ingredients-wrapper.no-fade::after {
-  display: none;
-}
-.card div button {
-  background-color: transparent;
+.card .card-toggle {
+  background: transparent;
   border: none;
-  font-size: 16px;
   cursor: pointer;
-  z-index: 2;
-  padding: 0;
-  margin-top: 2px;
-  line-height: 1;
+  font-size: 16px;
+  padding: 2px 0;
+  color: #999;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+.card .card-toggle:hover {
+  color: #333;
+}
+.card .ingredients-text {
+  display: none;
+  font-size: 10px;
+  color: #666;
+  padding: 4px 0;
+  text-align: left;
+  width: 100%;
+}
+.card.is-expanded .ingredients-text {
+  display: block;
 }
 
 #menuSection {
@@ -303,10 +334,7 @@ header img {
 
 .mainCategory {
   border-radius: 20px;
-  border: 2px solid #fc0002;
-  box-shadow: 0 0 0 3px white, 0 0 0 5px #fc0002, 0 0 0 7px white, 0 0 0 9px #fc0002;
   min-height: 100px;
-  margin: 5px;
   transition: border-radius 0.3s ease, background-color 0.4s ease, border 0.3s ease;
   align-self: start;
 }
@@ -362,7 +390,7 @@ header img {
   grid-column: 1/-1;
   display: none;
   border: 2px solid #fc0002;
-  background: white;
+  background: #faf7f3;
 }
 .expandedPanel.visible {
   display: block;
@@ -387,6 +415,11 @@ header img {
   width: 100%;
 }
 .subCategory .subcategory-title {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  font-style: normal;
+  color: black;
   text-align: left;
   margin-bottom: 16px;
   padding-bottom: 6px;
@@ -398,6 +431,7 @@ header img {
   gap: 15px;
   width: 100%;
   padding-bottom: 10px;
+  align-items: start;
 }
 
 @media (max-width: 768px) {
@@ -509,6 +543,10 @@ footer a:hover {
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #faf7f3;
 }
 
 h1 {

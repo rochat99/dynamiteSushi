@@ -62,12 +62,6 @@ function toggleCategory(id) {
   panel.classList.add('visible');
   article.classList.add('is-expanded');
   activeCategory = id;
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      panel.querySelectorAll('.card').forEach(card => checkChevronVisibility(card));
-    });
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -148,24 +142,22 @@ function buildCard(item) {
   const tags = document.createElement('div');
   tags.classList.add('tags');
 
-  if (isVal(item.tags) && item.tags === 'spicy') {
-    tags.appendChild(createTag('spicy'));
-  }
-  if (isVal(item.tags) && item.tags === 'vegan') {
-    tags.appendChild(createTag('vegan'));
-  }
-  if (item.isOnSale) {
-    tags.appendChild(createTag('sale'));
-  }
-  if (item.isChefsChoice) {
-    tags.appendChild(createTag('chefsChoice'));
-  }
-
+  if (isVal(item.tags) && item.tags === 'spicy') tags.appendChild(createTag('spicy'));
+  if (isVal(item.tags) && item.tags === 'vegan') tags.appendChild(createTag('vegan'));
+  if (item.isOnSale) tags.appendChild(createTag('sale'));
+  if (item.isChefsChoice) tags.appendChild(createTag('chefsChoice'));
   if (tags.children.length > 0) card.appendChild(tags);
 
   const img = document.createElement('img');
-  img.src = `./assets/images/items/${item.id}.jpg`;
+  img.src = `./assets/images/items/${item.id}.jpeg`;
   img.alt = item.name ?? '';
+  img.onerror = () => {
+    img.style.display = 'none';
+    const placeholder = document.createElement('div');
+    placeholder.classList.add('img-placeholder');
+    placeholder.innerHTML = `<img src="/assets/images/placeholder.svg" alt="">`;
+    card.insertBefore(placeholder, img);
+  };
   card.appendChild(img);
 
   const content = document.createElement('div');
@@ -213,76 +205,26 @@ function buildCard(item) {
   content.appendChild(price);
 
   if (isVal(item.ingredients)) {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('ingredients-wrapper');
-
-    const p = document.createElement('p');
-    p.classList.add('ingredients-text');
-    p.textContent = item.ingredients;
-    wrapper.appendChild(p);
-    content.appendChild(wrapper);
-
     const toggle = document.createElement('button');
     toggle.classList.add('card-toggle');
-    toggle.style.display = 'none';
     toggle.innerHTML = '<i class="bi bi-chevron-compact-down"></i>';
 
-toggle.addEventListener('click', () => {
-  const isExpanded = card.classList.toggle('is-expanded');
-  const icon = toggle.querySelector('i');
-  icon.classList.toggle('bi-chevron-compact-down', !isExpanded);
-  icon.classList.toggle('bi-chevron-compact-up', isExpanded);
+    const ingredients = document.createElement('p');
+    ingredients.classList.add('ingredients-text');
+    ingredients.textContent = item.ingredients;
 
-  if (isExpanded) {
-    p.style.display = 'block';
-    p.style.webkitLineClamp = 'unset';
-    p.style.overflow = 'visible';
-    wrapper.style.overflow = 'visible';
-    wrapper.classList.add('no-fade');
-  } else {
-    p.style.display = '-webkit-box';
-    p.style.webkitBoxOrient = 'vertical';
-    p.style.webkitLineClamp = '2'; // ← changed from 3 to 2
-    p.style.overflow = 'hidden';
-    wrapper.style.overflow = 'hidden';
-    wrapper.classList.remove('no-fade');
-  }
-});
+    toggle.addEventListener('click', () => {
+      const isExpanded = card.classList.toggle('is-expanded');
+      toggle.querySelector('i').classList.toggle('bi-chevron-compact-down', !isExpanded);
+      toggle.querySelector('i').classList.toggle('bi-chevron-compact-up', isExpanded);
+    });
 
+    content.appendChild(ingredients);
     content.appendChild(toggle);
   }
 
   card.appendChild(content);
   return card;
-}
-
-function checkChevronVisibility(card) {
-  const p = card.querySelector('.ingredients-text');
-  const toggle = card.querySelector('.card-toggle');
-  const wrapper = card.querySelector('.ingredients-wrapper');
-  if (!p || !toggle || !wrapper) return;
-
-  p.style.display = 'block';
-  p.style.webkitLineClamp = 'unset';
-  p.style.overflow = 'visible';
-  wrapper.style.overflow = 'visible';
-
-  const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
-  const naturalHeight = p.scrollHeight;
-  const twoLineHeight = lineHeight * 2; // ← changed from 3 to 2
-
-  if (naturalHeight > Math.ceil(twoLineHeight)) {
-    p.style.display = '-webkit-box';
-    p.style.webkitBoxOrient = 'vertical';
-    p.style.webkitLineClamp = '2'; // ← changed from 3 to 2
-    p.style.overflow = 'hidden';
-    wrapper.style.overflow = 'hidden';
-    toggle.style.display = 'block';
-  } else {
-    p.style.display = 'block';
-    toggle.style.display = 'none';
-    wrapper.classList.add('no-fade');
-  }
 }
 
 // ── Specials carousel ─────────────────────────────────────────────────────────
@@ -313,19 +255,13 @@ function loadSpecial(key, isInitial = false) {
     const card = buildCard(item);
     if (card) carousel.appendChild(card);
   });
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      carousel.querySelectorAll('.card').forEach(card => checkChevronVisibility(card));
-    });
-  });
 }
 
 // ── Filters ───────────────────────────────────────────────────────────────────
 
 function applyFilters() {
   const activeFilters = Array.from(
-    document.querySelectorAll('#filterArea .circle.active')
+    document.querySelectorAll('#filterArea li.active')
   ).map(el => el.id);
 
   // Apply to all cards everywhere in the menu panels
@@ -367,7 +303,7 @@ function applyFilters() {
 }
 
 function setupFilterListeners() {
-  document.querySelectorAll('#filterArea .circle').forEach(circle => {
+  document.querySelectorAll('#filterArea li').forEach(circle => {
     circle.addEventListener('click', () => {
       circle.classList.toggle('active');
       applyFilters();

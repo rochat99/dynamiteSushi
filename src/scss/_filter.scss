@@ -2,24 +2,37 @@
 
   ul {
     display: flex;
-    gap: 30px;
+    gap: 50%;
     list-style: none;
     justify-content: center;
     padding: 12px 0;
   }
 
-  .circle {
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+
+    .filter-label {
+      @include inter(10px, 600);
+      color: #666;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  }
+
+  .icon-circle {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     background-color: white;
     transition: background-color 0.2s ease;
 
-    // the icon sits as a mask on a coloured div inside the circle
     .icon {
       width: 24px;
       height: 24px;
@@ -27,66 +40,65 @@
     }
   }
 
-  // each filter gets its own colour
   #spicy {
-    border: 2px solid $red;
-
+    .icon-circle {
+      border: 2px solid $red;
+      &:hover { background-color: rgba($red, 0.15); }
+    }
     .icon {
       background-color: $red;
       -webkit-mask: url('../images/spicy.svg') center / contain no-repeat;
       mask: url('../images/spicy.svg') center / contain no-repeat;
     }
-
-    &:hover { background-color: rgba($red, 0.15); }
-    &.active {
+    &.active .icon-circle {
       background-color: $red;
       .icon { background-color: white; }
     }
   }
 
   #vegan {
-    border: 2px solid $green;
-
+    .icon-circle {
+      border: 2px solid $green;
+      &:hover { background-color: rgba($green, 0.15); }
+    }
     .icon {
       background-color: $green;
       -webkit-mask: url('../images/vegan.svg') center / contain no-repeat;
       mask: url('../images/vegan.svg') center / contain no-repeat;
     }
-
-    &:hover { background-color: rgba($green, 0.15); }
-    &.active {
+    &.active .icon-circle {
       background-color: $green;
       .icon { background-color: white; }
     }
   }
 
   #sale {
-    border: 2px solid $orange;
-
+    .icon-circle {
+      border: 2px solid $orange;
+      &:hover { background-color: rgba($orange, 0.15); }
+    }
     .icon {
       background-color: $orange;
       -webkit-mask: url('../images/sale.svg') center / contain no-repeat;
       mask: url('../images/sale.svg') center / contain no-repeat;
     }
-
-    &:hover { background-color: rgba($orange, 0.15); }
-    &.active {
+    &.active .icon-circle {
       background-color: $orange;
       .icon { background-color: white; }
     }
   }
 
   #chefsChoice {
-    border: 2px solid $blue;
-
+    .icon-circle {
+      border: 2px solid $blue;
+      &:hover { background-color: rgba($blue, 0.15); }
+    }
     .icon {
       background-color: $blue;
       -webkit-mask: url('../images/chefsChoice.svg') center / contain no-repeat;
       mask: url('../images/chefsChoice.svg') center / contain no-repeat;
     }
-
-    &:hover { background-color: rgba($blue, 0.15); }
-    &.active {
+    &.active .icon-circle {
       background-color: $blue;
       .icon { background-color: white; }
     }

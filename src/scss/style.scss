@@ -14,6 +14,10 @@
     padding: 0;
 }
 
+body {
+  background-color: $warm-bg;
+}
+
 h1 { @include inter(28px, 800) }
 h2 { @include inter(16px, 800) }
 h3 { @include inter(12px, 400) }

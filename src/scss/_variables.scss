@@ -3,6 +3,8 @@ $orange: #f88d04;
 $green: #28ba65;
 $blue: #0071b0;
 $purple: #824bd0;
+$warm-bg: #faf7f3;
+$warm-border: #e8e0d4;
 
 @mixin inter ($size, $weight, $style: normal, $color: black) {
     font-family: 'Inter', sans-serif;
@@ -10,13 +12,4 @@ $purple: #824bd0;
     font-weight: $weight;
     font-style: $style;
     color: $color;
-};
-
-@mixin triple-border($color) {
-  border: 2px solid $color;
-  box-shadow: 
-    0 0 0 3px white,
-    0 0 0 5px $color,
-    0 0 0 7px white,
-    0 0 0 9px $color;
 };
