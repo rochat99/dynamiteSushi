@@ -1,6 +1,6 @@
 header {
   display: flex;
-  width: 100vw;
+  width: 100%;
   background-color: #0071b0;
   height: 80px;
   justify-content: center;
@@ -41,7 +41,7 @@ header img {
   transition: border 0.2s ease;
 }
 #specialsSection #specialsCarousel {
-  display: flex;
+  display: none;
   flex-direction: row;
   overflow-x: auto;
   gap: 20px;
@@ -53,6 +53,9 @@ header img {
   scrollbar-width: none;
   cursor: grab;
 }
+#specialsSection #specialsCarousel.visible {
+  display: flex;
+}
 #specialsSection #specialsCarousel::-webkit-scrollbar {
   display: none;
 }
@@ -63,6 +66,87 @@ header img {
 #specialsSection #specialsCarousel .card {
   flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+#weeklySpecials {
+  display: none;
+  padding: 20px 40px;
+}
+#weeklySpecials.visible {
+  display: block;
+}
+#weeklySpecials .weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+#weeklySpecials .weekly-card {
+  background: #fff;
+  border: 1.5px solid #e8e0d4;
+  border-radius: 14px;
+  padding: 20px 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  transition: box-shadow 0.2s ease;
+}
+#weeklySpecials .weekly-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+#weeklySpecials .weekly-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  line-height: 1.6;
+  color: #444;
+}
+#weeklySpecials .weekly-card strong {
+  font-weight: 800;
+  color: #111;
+}
+#weeklySpecials .weekly-card .highlight {
+  color: #fc0002;
+  font-weight: 700;
+}
+#weeklySpecials .weekly-card .weekly-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #fc0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
+  flex-shrink: 0;
+}
+#weeklySpecials .weekly-card .weekly-new {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background-color: #f88d04;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+#weeklySpecials .weekly-card.new {
+  border-color: #f88d04;
+  box-shadow: 0 4px 14px rgba(248, 141, 4, 0.2);
 }
 
 #filterArea ul {

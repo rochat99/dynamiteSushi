@@ -29,7 +29,7 @@
   }
 
   #specialsCarousel {
-    display: flex;
+    display: none;
     flex-direction: row;
     overflow-x: auto;
     gap: 20px;
@@ -41,6 +41,10 @@
     scrollbar-width: none;
     cursor: grab;
 
+    &.visible {
+      display: flex;
+    }
+
     &::-webkit-scrollbar { display: none; }
 
     &.dragging {
@@ -51,6 +55,85 @@
     .card {
       flex-shrink: 0;
       scroll-snap-align: start;
+    }
+  }
+}
+
+#weeklySpecials {
+  display: none;
+  padding: 20px 40px;
+
+  &.visible {
+    display: block;
+  }
+
+  .weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .weekly-card {
+    background: #fff;
+    border: 1.5px solid $warm-border;
+    border-radius: 14px;
+    padding: 20px 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    p {
+      @include inter(13px, 400);
+      line-height: 1.6;
+      color: #444;
+    }
+
+    strong {
+      font-weight: 800;
+      color: #111;
+    }
+
+    .highlight {
+      color: $red;
+      font-weight: 700;
+    }
+
+    .weekly-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include inter(14px, 800, normal, white);
+      flex-shrink: 0;
+    }
+
+    .weekly-new {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      background-color: $orange;
+      @include inter(10px, 800, normal, white);
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    &.new {
+      border-color: $orange;
+      box-shadow: 0 4px 14px rgba($orange, 0.2);
     }
   }
 }

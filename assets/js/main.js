@@ -233,6 +233,16 @@ const specialsData = {};
 
 function loadSpecial(key, isInitial = false) {
   const carousel = document.getElementById('specialsCarousel');
+  const weekly = document.getElementById('weeklySpecials');
+
+  if (key === 'weeklySpecial') {
+    carousel.classList.remove('visible');
+    weekly.classList.add('visible');
+  } else {
+    carousel.classList.add('visible');
+    weekly.classList.remove('visible');
+  }
+
   carousel.innerHTML = '';
 
   const applyActive = () => {
@@ -331,6 +341,7 @@ function renderMenuFromJSON(data) {
         specialsData[toKey(subcategoryName)] = items;
       }
       loadSpecial('bentoBoxes', true);
+      document.getElementById('specialsCarousel').classList.add('visible');
       continue;
     }
 
