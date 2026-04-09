@@ -1842,7 +1842,7 @@
         },
         {
           "id": "sd_pd-tunaLoveMakiRoll",
-          "name": "Tuna Love Maki Roll",
+          "name": "Tuna Lover Maki Roll",
           "ingredients": "tuna, avocado, spicy tuna topping",
           "option1": "null",
           "price1": 14.90,
@@ -1857,7 +1857,7 @@
         },
         {
           "id": "sd_pd-salmLoveMakiRoll",
-          "name": "Salmon Love Maki Roll",
+          "name": "Salmon Lover Maki Roll",
           "ingredients": "salmon, avocado, spicy salmon topping",
           "option1": "null",
           "price1": 13.90,
@@ -2359,7 +2359,7 @@
           "isChefsChoice": false
         },
         {
-          "id": "al_sa-chitSash",
+          "id": "al_sa-chutSash",
           "name": "Chutoro Sashimi",
           "ingredients": "null",
           "option1": "3pc",

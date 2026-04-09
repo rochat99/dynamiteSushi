@@ -168,7 +168,7 @@ function buildCard(item) {
   if (tags.children.length > 0) card.appendChild(tags);
 
   const img = document.createElement('img');
-  img.src = `./assets/images/items/${item.id}.jpeg`;
+  img.src = `./assets/images/items/${item.id}.webp`;
   img.alt = item.name ?? '';
   img.onerror = () => {
     img.style.display = 'none';

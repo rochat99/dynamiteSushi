@@ -13,7 +13,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "bootstrap": "^5.3.8",
