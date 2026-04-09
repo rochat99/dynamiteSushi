@@ -18,6 +18,15 @@
     }
   }
 
+  #weeklySpecials {
+    padding: 20px 16px;
+
+    .weekly-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
   // MENU SECTION
   #menuSection {
     grid-template-columns: 1fr;
@@ -105,4 +114,15 @@
   body {
     overflow-x: hidden;
   }
+}
+
+//DISCOUNT BUTTON
+.discount-btn {
+  bottom: 20px;
+  right: 20px;
+}
+
+.discount-banner {
+  bottom: 20px;
+  right: 76px;
 }

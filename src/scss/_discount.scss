@@ -1,0 +1,72 @@
+.discount-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: $red;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  transition: background-color 0.5s ease, transform 0.3s ease;
+
+  i {
+    color: white;
+    font-size: 22px;
+  }
+
+  &:hover {
+    background-color: lighten($orange, 20%);
+    transform: scale(1.05);
+  }
+
+  &.active {
+    background-color: lighten($orange, 20%);
+    border-radius: 0 50% 50% 0;
+  }
+}
+
+.discount-banner {
+  position: fixed;
+  bottom: 30px;
+  right: 86px;
+  background: #fff;
+  border: 1.5px solid $warm-border;
+  border-radius: 14px 0 0 14px;
+  padding: 0 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  height: 56px;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  padding: 0;
+  transition: max-width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+
+  &.visible {
+    max-width: 400px;
+    opacity: 1;
+    padding: 0 20px;
+  }
+
+  p {
+    @include inter(13px, 700);
+    color: #111;
+    white-space: nowrap;
+    margin: 0;
+
+    &:first-child {
+      border-right: 1px solid $warm-border;
+      padding-right: 16px;
+    }
+  }
+}

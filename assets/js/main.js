@@ -111,6 +111,25 @@ function enableDragScroll(element) {
     const walk = (x - startX) * 1.5;
     element.scrollLeft = scrollLeft - walk;
   });
+
+  const discountBtn = document.createElement('button');
+  discountBtn.classList.add('discount-btn');
+  discountBtn.innerHTML = '<i class="bi bi-tag-fill"></i>';
+
+  const discountBanner = document.createElement('div');
+  discountBanner.classList.add('discount-banner');
+  discountBanner.innerHTML = `
+    <p>15% Cash Discount</p>
+    <p>10% Student Discount</p>
+  `;
+
+  discountBtn.addEventListener('click', () => {
+    discountBanner.classList.toggle('visible');
+    discountBtn.classList.toggle('active');
+  });
+
+  document.body.appendChild(discountBtn);
+  document.body.appendChild(discountBanner);
 }
 
 // ── Menu card building ────────────────────────────────────────────────────────
